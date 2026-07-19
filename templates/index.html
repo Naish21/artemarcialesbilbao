@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+{% set h = pages.home %}
+{% block title %}Artes Marciales Bilbao · Sambo y Defensa Personal{% endblock %}
+{% block description %}{{ site.description }}{% endblock %}
+
+{% block content %}
+<!-- HERO -->
+<section class="hero matgrid">
+  <div class="hero__circle" aria-hidden="true"></div>
+  <span class="hero__ru" aria-hidden="true">{{ site.heritage_ru }}</span>
+  <div class="wrap hero__inner">
+    <span class="eyebrow">{{ h.hero_eyebrow }}</span>
+    <h1 class="hero__title">{{ h.hero_title_1 }} <span class="accent">{{ h.hero_title_2 }}</span></h1>
+    <p class="hero__sub">{{ h.hero_subtitle }}</p>
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="/contacto.html">{{ h.hero_cta_primary }} <span class="btn__arrow">→</span></a>
+      <a class="btn btn--ghost" href="/manual.html">{{ h.hero_cta_secondary }}</a>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="section section--paper">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">{{ h.intro_eyebrow }}</span>
+      <h2>{{ h.intro_title }}</h2>
+      <p>{{ h.intro_body }}</p>
+    </div>
+    <div class="pillars reveal">
+      {% for p in h.pillars %}
+      <article class="pillar">
+        <span class="pillar__tag">{{ p.tag }}</span>
+        <h3>{{ p.title }}</h3>
+        <p>{{ p.text }}</p>
+        <a href="{{ p.link }}">{{ p.link_label }} <span>→</span></a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- POR QUÉ AQUÍ -->
+<section class="section matgrid">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">{{ h.why_eyebrow }}</span>
+      <h2>{{ h.why_title }}</h2>
+    </div>
+    <div class="feature-grid reveal">
+      {% for f in h.why_points %}
+      <div class="feature">
+        <h3>{{ f.title }}</h3>
+        <p>{{ f.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- MANUAL destacado -->
+<section class="section section--paper">
+  <div class="wrap">
+    <div class="manual-hero">
+      <div class="manual-cover reveal">
+        <span class="manual-badge">Gratis en PDF</span>
+        <img src="{{ manual.cover_url }}" alt="Portada del {{ manual.title }}"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='grid';">
+        <div class="manual-cover__ph" style="display:none">{{ manual.title }}<br><small>Portada</small></div>
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">El manual</span>
+        <h2 style="font-size:clamp(2rem,5vw,3.4rem);margin:14px 0 18px;color:var(--ink)">{{ manual.title }}</h2>
+        <p class="lede" style="color:var(--muted-l);max-width:52ch">{{ manual.summary }}</p>
+        <p style="color:var(--muted-l);margin-top:16px">Te lo regalamos en PDF por dejarnos tu email. Y si lo quieres en papel, está disponible por {{ manual.price }}.</p>
+        <div class="hero__actions" style="margin-top:26px">
+          <a class="btn btn--primary" href="/manual.html">Descargar gratis <span class="btn__arrow">→</span></a>
+          <a class="btn btn--ghost" href="{{ manual.buy_url }}" target="_blank" rel="noopener">Comprarlo por {{ manual.price }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NOVEDADES / SOCIAL -->
+{% include "partials/social.html" %}
+
+<!-- HORARIOS + MAPA -->
+<section class="section section--paper matgrid">
+  <div class="wrap">
+    <div class="info-grid">
+      <div class="reveal">
+        <span class="eyebrow">Horarios y lugar</span>
+        <h2 style="font-size:clamp(2rem,5vw,3rem);margin:14px 0 20px;color:var(--ink)">Cuándo y dónde</h2>
+        <div class="hours">
+          <div class="h-row"><b>Sambo</b><span>{{ schedule.sambo }}</span></div>
+          <div class="h-row"><b>Defensa personal</b><span>{{ schedule.defensa }}</span></div>
+          <div class="h-row"><b>Seminarios</b><span>Con reserva previa</span></div>
+        </div>
+        <p style="color:var(--muted-l);margin-top:22px">{{ contact.address_line1 }} · {{ contact.address_ref }}</p>
+        <div class="hero__actions" style="margin-top:20px">
+          <a class="btn btn--light" href="/contacto.html">Cómo llegar <span class="btn__arrow">→</span></a>
+        </div>
+      </div>
+      <div class="reveal">
+        <iframe class="map-embed" src="{{ contact.map_embed }}" loading="lazy" title="Mapa: cómo llegar al club" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA final -->
+<section class="cta-band">
+  <div class="wrap">
+    <div>
+      <h2>Tu primera clase es gratis</h2>
+      <p>Ven a probar sin compromiso. Te enseñamos el club y entrenas con nosotros.</p>
+    </div>
+    <a class="btn btn--light" href="/contacto.html">Reservar clase de prueba <span class="btn__arrow">→</span></a>
+  </div>
+</section>
+{% endblock %}

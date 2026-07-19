@@ -1,0 +1,130 @@
+# =============================================================================
+#  TEXTOS DE LAS PÁGINAS — Artes Marciales Bilbao
+#  Reescritos y ampliados a partir de tu web actual + mejoras.
+# =============================================================================
+
+home:
+  hero_eyebrow: "Sambo · Defensa personal · Bilbao"
+  hero_title_1: "Aprende a"
+  hero_title_2: "defenderte"
+  hero_subtitle: >
+    Club de sambo y defensa personal en el centro de Bilbao. Entrenamos fuerte,
+    en un ambiente cercano, y damos herramientas reales para que confíes en ti.
+  hero_cta_primary: "Prueba una clase gratis"
+  hero_cta_secondary: "Descarga el manual gratis"
+
+  intro_eyebrow: "Nuestro club"
+  intro_title: "Un grupo de gente que entrena en serio, sin humos"
+  intro_body: >
+    Somos entusiastas de las artes marciales dedicados al sambo y a la defensa
+    personal. Trabajamos de forma individual, adaptándonos a tu nivel y a tu
+    condición física, para que mejores tus habilidades, tu forma física y tu
+    confianza. Aquí no hay egos: hay técnica, esfuerzo y buen ambiente.
+
+  pillars:
+    - tag: "01"
+      title: "Sambo"
+      text: "El arte marcial ruso de la «autodefensa sin armas». Lucha, control y sumisiones. Una formación física y técnica completa."
+      link: "/sambo.html"
+      link_label: "Conoce el sambo"
+    - tag: "02"
+      title: "Defensa personal para mujeres"
+      text: "Clases semanales y seminarios de 8 h. Técnicas sencillas y eficaces, sin necesidad de fuerza física, para cualquier edad y nivel."
+      link: "/defensa-personal.html"
+      link_label: "Ver cursos y seminarios"
+    - tag: "03"
+      title: "Manual gratuito en PDF"
+      text: "Nuestro «Manual de Defensa Personal para Mujeres» en PDF, gratis. Déjanos tu email y te lo enviamos."
+      link: "/manual.html"
+      link_label: "Descargar el manual"
+
+  why_eyebrow: "Por qué aquí"
+  why_title: "Lo que nos diferencia"
+  why_points:
+    - title: "Instructor con manual publicado"
+      text: "Jorge Aranda Moro, nuestro instructor, ha publicado un manual de defensa personal para mujeres. No improvisamos: hay método detrás."
+    - title: "Sin fuerza, con técnica"
+      text: "Nuestro programa está pensado para que funcione sin depender de la fuerza física. Sirve tengas la edad y la forma que tengas."
+    - title: "Ambiente cercano"
+      text: "Grupos reducidos, trato individual y cero postureo. Se viene a aprender y a pasarlo bien."
+    - title: "En pleno centro"
+      text: "En la galería comercial de Plaza Indautxu, con metro en la misma puerta. Fácil de llegar desde cualquier punto de Bilbao."
+
+sambo:
+  hero_eyebrow: "самозащита без оружия"
+  hero_title: "Sambo"
+  hero_lede: >
+    En ruso significa, literalmente, «autodefensa sin armas». Un deporte de combate
+    y sistema de defensa personal desarrollado en la antigua Unión Soviética, con
+    raíces en el judo, la lucha, el boxeo y otras artes marciales.
+  sections:
+    - title: "¿Qué es el sambo?"
+      body: >
+        El sambo es un deporte de combate y sistema de defensa personal desarrollado
+        en la antigua Unión Soviética, con una variante —la «Lucha Sambo»— reconocida
+        como deporte nacional en 1938. Bebe de estilos tradicionales como el judo, el
+        savate, el jiu-jitsu, el boxeo, el kárate, el kung-fu y la lucha olímpica. Es
+        un arte marcial sorprendentemente integral: para muchos expertos, pocos
+        sistemas son tan completos.
+    - title: "Origen"
+      body: >
+        Nace de la lucha tradicional rusa y del judo japonés. Lo desarrollaron en los
+        años 20 y 30 los oficiales soviéticos Vasili Oshchepkov —que había estudiado
+        judo en Japón— y Viktor Spiridonov, buscando un sistema eficaz tanto en
+        competición como en combate cuerpo a cuerpo. El nombre es el acrónimo de
+        «SAMozashchita Bez Oruzhiya»: autodefensa sin armas. La primera competición
+        oficial se celebró en 1928 y desde entonces no ha dejado de crecer por todo el
+        mundo.
+    - title: "Fundamentos"
+      body: >
+        Combina técnicas de lucha libre, judo y otras artes marciales, con especial
+        énfasis en el control del cuerpo y el uso de llaves y sumisiones. Trabaja la
+        condición física, la técnica de lucha y la defensa personal a la vez. Su
+        carácter integral lo hace ideal para quien busca una base sólida y completa,
+        también de cara a las artes marciales mixtas.
+    - title: "Beneficios"
+      body: >
+        Mejora la condición física general, la coordinación, el equilibrio y la
+        flexibilidad, y fortalece músculos y resistencia cardiovascular. Pero también
+        entrena la cabeza: concentración, paciencia, perseverancia y confianza en uno
+        mismo. Con la práctica desarrollas una mayor conciencia de tu cuerpo y una
+        capacidad de reacción que marca la diferencia en situaciones de riesgo.
+  cta_title: "Ven a probar un entrenamiento"
+  cta_text: "Lunes, miércoles y viernes de 21:15 a 22:30 h. La primera clase es gratis y sin compromiso."
+
+defensa:
+  hero_eyebrow: "Defensa personal para mujeres"
+  hero_title: "Recursos reales para defenderte"
+  hero_lede: >
+    Todos los instructores de Sambo DP Bilbao estamos concienciados con el problema
+    de la violencia contra la mujer. Queremos darte herramientas para defenderte de
+    forma eficaz ante una agresión, sea cual sea tu edad, tu experiencia previa o tu
+    condición física.
+  formats_title: "Dos formas de formarte"
+  formats:
+    - title: "Clases semanales"
+      text: "Lunes y miércoles al mediodía. Para trabajar la técnica de forma continua y afianzarla con el tiempo."
+    - title: "Seminarios intensivos"
+      text: "De 8 horas mínimo, con reserva previa. Organizamos al menos dos al año en Bilbao para practicar y asimilar el temario con eficacia."
+    - title: "Grupos a medida"
+      text: "¿Ya sois un grupo de 6 o más? Impartimos el seminario para vosotras en las fechas que mejor os vengan."
+  program_title: "Un programa específico"
+  program_body: >
+    Nuestro programa está pensado para que cualquier mujer pueda afrontar con eficacia,
+    y sin necesidad de fuerza física, las situaciones en las que pueda encontrarse. Es
+    fruto del estudio constante de distintas artes marciales durante años, y reúne las
+    técnicas más sencillas, cómodas y efectivas para un ataque callejero. No lo dudes:
+    tienes más recursos de los que crees.
+  cta_title: "Escríbenos para las próximas fechas"
+  cta_text: "Te contamos cuándo es el próximo seminario o preparamos uno para tu grupo."
+
+contacto:
+  hero_eyebrow: "Contacto"
+  hero_title: "Pásate a vernos"
+  hero_lede: >
+    Estamos en el centro de Bilbao, en la galería comercial de Plaza Indautxu.
+    Escríbenos o llámanos y te contamos todo sin compromiso.
+
+privacidad:
+  title: "Aviso legal y política de privacidad"
+  updated: "Julio de 2026"

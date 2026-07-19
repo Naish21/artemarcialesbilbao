@@ -1,0 +1,72 @@
+{# Formulario para regalar el manual en PDF a cambio del email.
+   Se adapta a lead_magnet.provider: mailto | formspree | mailerlite #}
+{% set lm = lead_magnet %}
+
+{% if lm.provider == 'formspree' %}
+  <form class="lead-form" action="https://formspree.io/f/{{ lm.formspree_id }}" method="POST">
+    <input type="hidden" name="_subject" value="Solicitud del manual (web)">
+    <input type="hidden" name="_next" value="{{ site.domain }}{{ lm.success_url }}">
+    <div class="row">
+      <div class="field">
+        <label for="lf-name">Nombre</label>
+        <input id="lf-name" type="text" name="nombre" required autocomplete="name" placeholder="Tu nombre">
+      </div>
+      <div class="field">
+        <label for="lf-email">Email</label>
+        <input id="lf-email" type="email" name="email" required autocomplete="email" placeholder="tucorreo@ejemplo.com">
+      </div>
+    </div>
+    {% include "partials/consent.html" %}
+    <button class="btn btn--primary" type="submit">Enviadme el manual gratis <span class="btn__arrow">→</span></button>
+    <p class="form-note">Te lo enviamos al correo en cuanto lo recibamos. Sin spam.</p>
+  </form>
+
+{% elif lm.provider == 'mailerlite' %}
+  {# Pega aquí el formulario embed de MailerLite. Mientras tanto mostramos el bloque de ayuda. #}
+  <div class="ml-embed" data-account="TU_CUENTA">
+    <!-- INICIO embed MailerLite: sustituye este bloque por el código que te da MailerLite -->
+    <form class="lead-form" onsubmit="return false;">
+      <div class="row">
+        <div class="field"><label>Nombre</label><input type="text" placeholder="Tu nombre"></div>
+        <div class="field"><label>Email</label><input type="email" placeholder="tucorreo@ejemplo.com"></div>
+      </div>
+      {% include "partials/consent.html" %}
+      <button class="btn btn--primary" type="submit">Enviadme el manual gratis <span class="btn__arrow">→</span></button>
+      <p class="form-note">⚠️ Placeholder: pega el embed real de MailerLite (ver README) para que se envíe el PDF automáticamente.</p>
+    </form>
+    <!-- FIN embed MailerLite -->
+  </div>
+
+{% else %}
+  {# mailto: funciona el primer día sin configurar nada. Compone un email al club. #}
+  <form class="lead-form" id="mailtoForm">
+    <div class="row">
+      <div class="field">
+        <label for="lf-name">Nombre</label>
+        <input id="lf-name" type="text" name="nombre" required autocomplete="name" placeholder="Tu nombre">
+      </div>
+      <div class="field">
+        <label for="lf-email">Email</label>
+        <input id="lf-email" type="email" name="email" required autocomplete="email" placeholder="tucorreo@ejemplo.com">
+      </div>
+    </div>
+    {% include "partials/consent.html" %}
+    <button class="btn btn--primary" type="submit">Pedir el manual gratis <span class="btn__arrow">→</span></button>
+    <p class="form-note">Al enviar se abrirá tu correo con el mensaje listo. Te devolvemos el PDF a la mayor brevedad.</p>
+  </form>
+  <script>
+    (function(){
+      var f = document.getElementById('mailtoForm');
+      if(!f) return;
+      f.addEventListener('submit', function(e){
+        e.preventDefault();
+        var n = f.nombre.value.trim(), m = f.email.value.trim();
+        var chk = f.querySelector('input[type=checkbox]');
+        if(chk && !chk.checked){ chk.focus(); return; }
+        var subject = encodeURIComponent('Quiero el manual de defensa personal (gratis)');
+        var body = encodeURIComponent('Hola, me gustaría recibir el manual en PDF.\n\nNombre: '+n+'\nEmail: '+m+'\n\nGracias.');
+        window.location.href = 'mailto:{{ contact.email }}?subject='+subject+'&body='+body;
+      });
+    })();
+  </script>
+{% endif %}

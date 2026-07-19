@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% set p = pages.privacidad %}
+{% block title %}Aviso legal y privacidad · Artes Marciales Bilbao{% endblock %}
+{% block description %}Aviso legal y política de privacidad de Artes Marciales Bilbao.{% endblock %}
+{% block head_extra %}<meta name="robots" content="noindex">{% endblock %}
+
+{% block content %}
+<section class="section matgrid" style="padding-top:clamp(56px,8vw,110px)">
+  <div class="wrap">
+    <span class="eyebrow">Legal</span>
+    <h1 style="font-size:clamp(2.2rem,6vw,3.6rem);margin:14px 0 8px">{{ p.title }}</h1>
+    <p style="color:var(--muted-d)">Última actualización: {{ p.updated }}</p>
+
+    <div class="legal" style="margin-top:36px">
+      <p><b style="color:var(--bone)">Nota:</b> completa los datos entre corchetes con tu información fiscal real antes de publicar.</p>
+
+      <h2>1. Titular del sitio</h2>
+      <p>Este sitio web es titularidad de <b>[Nombre y apellidos / razón social]</b>, con NIF <b>[NIF]</b> y domicilio en {{ contact.address_line2 }}, {{ contact.postal_code }} {{ contact.city }} ({{ contact.province }}). Contacto: {{ contact.email }} · {{ contact.phone_display }}.</p>
+
+      <h2>2. Objeto</h2>
+      <p>Este sitio informa sobre las actividades del club (sambo y defensa personal) y permite solicitar el manual de defensa personal en PDF y contactar con el club.</p>
+
+      <h2>3. Protección de datos (RGPD y LOPDGDD)</h2>
+      <p><b>Responsable:</b> [Nombre / razón social] · {{ contact.email }}.</p>
+      <ul>
+        <li><b>Qué datos tratamos:</b> nombre y correo electrónico que nos facilitas al solicitar el manual o al contactar.</li>
+        <li><b>Con qué finalidad:</b> enviarte el manual en PDF, atender tu consulta y, si lo consientes, remitirte información sobre cursos y actividades del club.</li>
+        <li><b>Legitimación:</b> tu consentimiento, que puedes retirar en cualquier momento.</li>
+        <li><b>Conservación:</b> mientras no solicites la baja o durante el tiempo necesario para cumplir obligaciones legales.</li>
+        <li><b>Destinatarios:</b> no se ceden datos a terceros salvo obligación legal. Los formularios pueden gestionarse mediante un proveedor de email marketing que actúa como encargado del tratamiento.</li>
+        <li><b>Tus derechos:</b> acceso, rectificación, supresión, oposición, limitación y portabilidad, escribiendo a {{ contact.email }}. También puedes reclamar ante la Agencia Española de Protección de Datos (aepd.es).</li>
+      </ul>
+
+      <h2>4. Cookies</h2>
+      <p>Este sitio es estático y no instala cookies propias de seguimiento. Al mostrar el mapa de Google e incrustar contenido de Instagram o Tumblr, esos servicios pueden instalar sus propias cookies según sus políticas. [Ajusta este apartado si añades analítica.]</p>
+
+      <h2>5. Propiedad intelectual</h2>
+      <p>Los contenidos, textos y logotipos de este sitio pertenecen a sus titulares. No se permite su reproducción sin autorización.</p>
+    </div>
+
+    <div class="hero__actions" style="margin-top:36px">
+      <a class="btn btn--primary" href="/">Volver al inicio <span class="btn__arrow">→</span></a>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,83 @@
+# =============================================================================
+#  CONTENIDO DE LA WEB — Artes Marciales Bilbao
+#  Edita este archivo y ejecuta:  python build.py
+#  Todo lo que se ve en la web sale de aquí. No hace falta tocar el HTML.
+# =============================================================================
+
+site:
+  name: "Artes Marciales Bilbao"
+  short_name: "Sambo · DP Bilbao"
+  domain: "https://www.artesmarcialesbilbao.com"
+  lang: "es"
+  # Frase heredada del sambo (se usa como firma tipográfica). Déjala o cámbiala.
+  heritage_ru: "самозащита без оружия"
+  heritage_es: "autodefensa sin armas"
+  description: "Club de Sambo y defensa personal para mujeres en Bilbao. Entrena autodefensa sin armas en Plaza Indautxu. Cursos, seminarios y manual gratuito en PDF."
+
+contact:
+  person: "Jorge"
+  phone_display: "656 76 49 22"
+  phone_link: "+34656764922"
+  whatsapp: "34656764922"          # para el enlace de WhatsApp
+  email: "admin@artesmarcialesbilbao.com"
+  address_line1: "Club Ohisama"
+  address_line2: "Subterráneo Plaza Indautxu (Galería Comercial)"
+  address_ref: "En la galería comercial de la Plaza de Indautxu, la de la entrada al metro, frente al Eroski."
+  city: "Bilbao"
+  province: "Bizkaia"
+  postal_code: "48010"
+  lat: 43.260905
+  lng: -2.940621
+  map_embed: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2905.547476341742!2d-2.940621!3d43.260905!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x321e54ad3a20ddb7!2sJudo%20Club%20Ohisama!5e0!3m2!1sen!2ses!4v1582395721070!5m2!1sen!2ses"
+
+social:
+  instagram_user: "sambodpbilbao"
+  instagram_url: "https://www.instagram.com/sambodpbilbao/"
+  tumblr_url: "https://artesmarcialesbilbao.tumblr.com/"
+
+schedule:
+  sambo: "Lunes, miércoles y viernes · 21:15 a 22:30 h"
+  defensa: "Clases semanales: lunes y miércoles al mediodía"
+  seminarios: "Seminarios de 8 h (mínimo), con reserva previa. Al menos dos al año en Bilbao."
+
+# --- Imán de leads: PDF gratis del manual a cambio del email --------------------
+# Sustituye MAILERLITE_FORM_ACTION o FORMSPREE_ID cuando lo configures (ver README).
+lead_magnet:
+  # Proveedor: "mailto" (funciona ya), "formspree" o "mailerlite"
+  provider: "mailto"
+  formspree_id: "TU_ID_FORMSPREE"        # ej. xayzabcd  -> https://formspree.io
+  mailerlite_action: "TU_ACTION_MAILERLITE"
+  success_url: "/gracias.html"
+
+manual:
+  title: "Manual de Defensa Personal para Mujeres"
+  author: "Jorge Aranda Moro"
+  price: "8,00 €"
+  pages: 58
+  format: "Rústica · 148 × 210 mm"
+  isbn: "9791044530059"
+  year: "2026"
+  cover_url: "https://www.coollibri.es/Project4/d14f1195-79c7-45b2-b3ad-7c24b3b6a4a1/56474/couverture_12072026193551.png"
+  buy_url: "https://www.coollibri.es/Infos/ContacterAuteur/aranda-moro-jorge?titre=manual-de-defensa-personal-para-mujeres_56474"
+  coollibri_url: "https://www.coollibri.es/biblioteca-libros-autoedicion/aranda-moro-jorge/manual-de-defensa-personal-para-mujeres_56474"
+  # Nombre del PDF que envías/regalas (colócalo en static/downloads/ si lo sirves tú)
+  pdf_file: "/downloads/manual-defensa-personal-mujeres.pdf"
+  summary: >
+    El objetivo del manual es lograr la mentalización necesaria para hacer frente
+    a una situación de agresión, potenciando tus habilidades y capacidades de defensa.
+    Esta edición revisada está orientada específicamente a la mujer.
+  highlights:
+    - "Evidencia científica sobre la eficacia de la autodefensa femenina."
+    - "Marco legal español actualizado: qué puedes y qué no puedes hacer."
+    - "Herramientas tecnológicas: apps móviles de seguridad ciudadana."
+    - "Enfoque práctico: prevención, gestión del conflicto y técnicas sencillas y eficaces."
+
+author:
+  name: "Jorge Aranda Moro"
+  role: "Instructor de defensa personal y divulgador tecnológico"
+  bio: >
+    Ha impartido cursos de defensa personal con especial dedicación a la formación de
+    mujeres, con un enfoque basado en la prevención, la gestión del conflicto y el uso
+    proporcionado de técnicas sencillas y eficaces. Su filosofía prioriza evitar la
+    violencia siempre que sea posible y dotar a las alumnas de herramientas que aumenten
+    su seguridad, confianza y capacidad de decisión.

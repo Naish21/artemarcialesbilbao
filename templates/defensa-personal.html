@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% set d = pages.defensa %}
+{% block title %}Defensa Personal para Mujeres en Bilbao · Cursos y Seminarios{% endblock %}
+{% block description %}Cursos y seminarios de defensa personal para mujeres en Bilbao. Técnicas sencillas y eficaces, sin fuerza física, para cualquier edad. Manual gratis en PDF.{% endblock %}
+
+{% block content %}
+<section class="hero matgrid" style="padding-block:clamp(60px,10vw,120px)">
+  <div class="hero__circle" aria-hidden="true"></div>
+  <div class="wrap hero__inner">
+    <span class="eyebrow">{{ d.hero_eyebrow }}</span>
+    <h1 class="hero__title" style="font-size:clamp(2.8rem,8.5vw,6rem)">{{ d.hero_title }}</h1>
+    <p class="hero__sub">{{ d.hero_lede }}</p>
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="/manual.html">Manual gratis en PDF <span class="btn__arrow">→</span></a>
+      <a class="btn btn--ghost" href="/contacto.html">Próximos seminarios</a>
+    </div>
+  </div>
+</section>
+
+<!-- Formatos -->
+<section class="section section--paper">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Formación</span>
+      <h2>{{ d.formats_title }}</h2>
+    </div>
+    <div class="pillars reveal">
+      {% for f in d.formats %}
+      <article class="pillar">
+        <span class="pillar__tag">0{{ loop.index }}</span>
+        <h3>{{ f.title }}</h3>
+        <p>{{ f.text }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Programa -->
+<section class="section matgrid">
+  <div class="wrap">
+    <div class="prose-block reveal" style="border-top:0">
+      <h3>{{ d.program_title }}</h3>
+      <div class="body">{{ d.program_body }}</div>
+    </div>
+  </div>
+</section>
+
+<!-- Manual como recurso destacado -->
+<section class="section section--paper">
+  <div class="wrap">
+    <div class="manual-hero">
+      <div class="manual-cover reveal">
+        <span class="manual-badge">Gratis en PDF</span>
+        <img src="{{ manual.cover_url }}" alt="Portada del {{ manual.title }}"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='grid';">
+        <div class="manual-cover__ph" style="display:none">{{ manual.title }}<br><small>Portada</small></div>
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">Llévate el manual</span>
+        <h2 style="font-size:clamp(1.9rem,5vw,3rem);margin:14px 0 18px;color:var(--ink)">{{ manual.title }}</h2>
+        <p style="color:var(--muted-l);max-width:54ch">{{ manual.summary }}</p>
+        <ul class="checklist" style="margin-top:22px">
+          {% for hi in manual.highlights %}<li>{{ hi }}</li>{% endfor %}
+        </ul>
+        <div class="hero__actions" style="margin-top:28px">
+          <a class="btn btn--primary" href="/manual.html">Descargar gratis <span class="btn__arrow">→</span></a>
+          <a class="btn btn--ghost" href="{{ manual.buy_url }}" target="_blank" rel="noopener">En papel · {{ manual.price }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <div>
+      <h2>{{ d.cta_title }}</h2>
+      <p>{{ d.cta_text }}</p>
+    </div>
+    <a class="btn btn--light" href="/contacto.html">Escríbenos <span class="btn__arrow">→</span></a>
+  </div>
+</section>
+{% endblock %}

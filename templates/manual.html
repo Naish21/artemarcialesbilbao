@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block title %}Manual de Defensa Personal para Mujeres · Gratis en PDF{% endblock %}
+{% block description %}Descarga gratis en PDF el «Manual de Defensa Personal para Mujeres» de Jorge Aranda Moro. Solo tienes que dejarnos tu email. También disponible en papel por 8 €.{% endblock %}
+{% block head_extra %}
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Book",
+  "name":"{{ manual.title }}","author":{"@type":"Person","name":"{{ manual.author }}"},
+  "isbn":"{{ manual.isbn }}","numberOfPages":{{ manual.pages }},"inLanguage":"es",
+  "offers":{"@type":"Offer","price":"8.00","priceCurrency":"EUR","url":"{{ manual.buy_url }}","availability":"https://schema.org/InStock"}
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<!-- HERO: portada + formulario -->
+<section class="section matgrid" style="padding-top:clamp(48px,7vw,90px)">
+  <div class="wrap">
+    <div class="manual-hero">
+      <div class="manual-cover reveal">
+        <span class="manual-badge">Gratis en PDF</span>
+        <img src="{{ manual.cover_url }}" alt="Portada del {{ manual.title }}"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='grid';">
+        <div class="manual-cover__ph" style="display:none">{{ manual.title }}<br><small>Portada</small></div>
+        <div class="manual-meta">
+          <span><b>{{ manual.pages }}</b> páginas</span>
+          <span><b>{{ manual.format.split('·')[0] }}</b></span>
+          <span>ISBN <b>{{ manual.isbn }}</b></span>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <span class="eyebrow">Manual de defensa personal</span>
+        <h1 style="font-size:clamp(2.2rem,6vw,4rem);margin:16px 0 18px">{{ manual.title }}</h1>
+        <p class="lede" style="color:var(--muted-d)">{{ manual.summary }}</p>
+        <p style="color:var(--muted-d);margin-top:14px">Escrito por <b style="color:var(--bone)">{{ manual.author }}</b>, instructor del club. Déjanos tu email y te lo enviamos gratis en PDF.</p>
+
+        <div style="margin-top:26px;padding:24px;border:1px solid var(--line-d);border-radius:8px;background:var(--ink-2)">
+          <div class="offer__label" style="margin-bottom:12px">◆ Descárgalo gratis</div>
+          {% include "partials/lead_form.html" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUÉ ENCONTRARÁS -->
+<section class="section section--paper">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Qué encontrarás</span>
+      <h2>Una guía práctica y actual</h2>
+      <p>Esta edición revisada está orientada específicamente a la mujer e incorpora los avances de los últimos años.</p>
+    </div>
+    <ul class="checklist reveal" style="max-width:56ch;font-size:1.12rem;gap:18px">
+      {% for hi in manual.highlights %}<li>{{ hi }}</li>{% endfor %}
+    </ul>
+  </div>
+</section>
+
+<!-- GRATIS vs PAPEL -->
+<section class="section matgrid">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Dos formas de tenerlo</span>
+      <h2>Elige la tuya</h2>
+    </div>
+    <div class="offer-grid reveal">
+      <div class="offer offer--free">
+        <span class="offer__label">◆ Digital</span>
+        <h3>PDF gratis</h3>
+        <div class="price">0 €</div>
+        <p>Te lo enviamos al correo por dejarnos tu email. Ideal para empezar hoy mismo.</p>
+        <a class="btn btn--primary" href="#top" onclick="document.querySelector('.lead-form input').focus();return false;">Pedir el PDF <span class="btn__arrow">→</span></a>
+      </div>
+      <div class="offer offer--buy">
+        <span class="offer__label">◆ En papel</span>
+        <h3>Edición impresa</h3>
+        <div class="price">{{ manual.price }}</div>
+        <p>Rústica, {{ manual.pages }} páginas. Para tenerlo a mano, subrayarlo y regalarlo. Compra directa al autor.</p>
+        <a class="btn btn--ghost" href="{{ manual.buy_url }}" target="_blank" rel="noopener">Comprar el libro <span class="btn__arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTOR -->
+<section class="section section--paper matgrid">
+  <div class="wrap">
+    <div class="author-card reveal" style="background:var(--bone);border-color:var(--line-l)">
+      <div class="avatar">JA</div>
+      <div>
+        <h3 style="color:var(--ink)">{{ author.name }}</h3>
+        <div class="role">{{ author.role }}</div>
+        <p style="color:var(--muted-l)">{{ author.bio }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% set s = pages.sambo %}
+{% block title %}Sambo en Bilbao · Artes Marciales Bilbao{% endblock %}
+{% block description %}Qué es el sambo, su origen, fundamentos y beneficios. Entrena sambo —autodefensa sin armas— en el centro de Bilbao. Lunes, miércoles y viernes.{% endblock %}
+
+{% block content %}
+<section class="hero matgrid" style="padding-block:clamp(60px,10vw,120px)">
+  <div class="hero__circle" aria-hidden="true"></div>
+  <div class="wrap hero__inner">
+    <span class="eyebrow" style="text-transform:none;letter-spacing:.1em">{{ s.hero_eyebrow }}</span>
+    <h1 class="hero__title" style="font-size:clamp(3.4rem,12vw,8rem)">{{ s.hero_title }}</h1>
+    <p class="hero__sub">{{ s.hero_lede }}</p>
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="/contacto.html">Prueba una clase <span class="btn__arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper">
+  <div class="wrap">
+    {% for sec in s.sections %}
+    <div class="prose-block reveal">
+      <h3>{{ sec.title }}</h3>
+      <div class="body">{{ sec.body }}</div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section matgrid">
+  <div class="wrap">
+    <div class="info-grid">
+      <div class="reveal">
+        <span class="eyebrow">Horarios</span>
+        <h2 style="font-size:clamp(2rem,5vw,3rem);margin:14px 0 20px">Entrenamos</h2>
+        <div class="hours">
+          <div class="h-row"><b>Lun · Mié · Vie</b><span>21:15 – 22:30 h</span></div>
+        </div>
+        <p style="color:var(--muted-d);margin-top:22px">{{ contact.address_ref }}</p>
+      </div>
+      <div class="reveal">
+        <div class="author-card">
+          <div class="avatar">JA</div>
+          <div>
+            <h3>{{ author.name }}</h3>
+            <div class="role">{{ author.role }}</div>
+            <p>{{ author.bio }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <div>
+      <h2>{{ s.cta_title }}</h2>
+      <p>{{ s.cta_text }}</p>
+    </div>
+    <a class="btn btn--light" href="/contacto.html">Reservar clase de prueba <span class="btn__arrow">→</span></a>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,48 @@
+<section class="section matgrid" aria-labelledby="novedades">
+  <div class="wrap">
+    <div class="social-head reveal">
+      <div>
+        <span class="eyebrow">En directo</span>
+        <h2 id="novedades" style="font-size:clamp(2rem,5vw,3.4rem);margin-top:14px">Novedades del club</h2>
+      </div>
+      <div class="social-actions">
+        <a class="btn btn--ghost" href="{{ social.instagram_url }}" target="_blank" rel="noopener">Instagram</a>
+        <a class="btn btn--ghost" href="{{ social.tumblr_url }}" target="_blank" rel="noopener">Tumblr</a>
+      </div>
+    </div>
+
+    <div class="embed-grid reveal">
+      <!-- Instagram -->
+      <div class="embed-card">
+        <div class="embed-card__head"><span class="dot"></span> Instagram · @{{ social.instagram_user }}</div>
+        <div class="embed-slot" id="instagram-slot">
+          <!-- ============================================================
+               INSTAGRAM: pega aquí tu widget (LightWidget o SnapWidget).
+               Instrucciones en el README. Mientras no lo pongas, se ve
+               el bloque de abajo con enlace directo al perfil.
+               ============================================================ -->
+          <div class="embed-card__body">
+            <span class="big">@{{ social.instagram_user }}</span>
+            <p>Fotos y vídeos de entrenamientos, seminarios y ambiente del club.</p>
+            <a class="btn btn--primary" href="{{ social.instagram_url }}" target="_blank" rel="noopener">Ver en Instagram →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tumblr -->
+      <div class="embed-card">
+        <div class="embed-card__head"><span class="dot"></span> Blog · Tumblr</div>
+        <div class="embed-slot" id="tumblr-slot">
+          <!-- ============================================================
+               TUMBLR: pega aquí el widget de tu Tumblr (ver README).
+               ============================================================ -->
+          <div class="embed-card__body">
+            <span class="big">Nuestro blog</span>
+            <p>Artículos, avisos de cursos y todo lo que se cuece en el club.</p>
+            <a class="btn btn--ghost" href="{{ social.tumblr_url }}" target="_blank" rel="noopener">Abrir el blog →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
