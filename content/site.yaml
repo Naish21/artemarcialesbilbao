@@ -73,7 +73,7 @@ lead_magnet:
   #    <div class="ml-embedded" data-form="xxxxxx">  -> aquí pondrías  "xxxxxx"
   mailerlite_form: "PttuCZ"
   # --- Formspree (alternativa) ---
-  formspree_id: "TU_ID_FORMSPREE"
+  # formspree_id: "TU_ID_FORMSPREE"
   success_url: "/gracias.html"
 
 manual:
@@ -108,3 +108,19 @@ author:
     proporcionado de técnicas sencillas y eficaces. Su filosofía prioriza evitar la
     violencia siempre que sea posible y dotar a las alumnas de herramientas que aumenten
     su seguridad, confianza y capacidad de decisión.
+
+# --- Equipo de instructores ---------------------------------------------------
+instructors_intro: "Un equipo con años de práctica en distintas artes marciales."
+instructors:
+  - name: "Jorge Aranda Moro"
+    initials: "JA"
+    role: "Defensa personal"
+    disciplines: ["Sambo (CN 2-Dan)", "Kung-fu (CN 1-Dan)", "Defensa personal", "Aikido", "Judo"]
+  - name: "Gorka Redondo Quincoces"
+    initials: "GR"
+    role: "Instructor"
+    disciplines: ["Sambo (CN 2-Dan)", "Kung-fu (CN 1-Dan)", "Defensa personal", "Aikido", "Judo"]
+  - name: "Raúl Muñoz Escalera"
+    initials: "RM"
+    role: "Instructor"
+    disciplines: ["Sambo (CN 1-Dan)", "Kung-fu (CN 1-Dan)", "Entrenador HIIT"]

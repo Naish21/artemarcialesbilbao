@@ -41,25 +41,29 @@
 
 <section class="section matgrid">
   <div class="wrap">
-    <div class="info-grid">
-      <div class="reveal">
-        <span class="eyebrow">Horarios</span>
-        <h2 style="font-size:clamp(2rem,5vw,3rem);margin:14px 0 20px">Entrenamos</h2>
-        <div class="hours">
-          <div class="h-row"><b>Lun · Mié · Vie</b><span>21:15 – 22:30 h</span></div>
-        </div>
-        <p style="color:var(--muted-d);margin-top:22px">{{ contact.address_ref }}</p>
+    <div class="section-head reveal">
+      <span class="eyebrow">Quién te enseña</span>
+      <h2>Nuestros instructores</h2>
+      <p>{{ instructors_intro }}</p>
+    </div>
+    <div class="instructors-grid reveal">
+      {% for ins in instructors %}
+      <div class="instructor">
+        <div class="avatar">{{ ins.initials }}</div>
+        <h3>{{ ins.name }}</h3>
+        <div class="role">{{ ins.role }}</div>
+        <ul class="disc">{% for d in ins.disciplines %}<li>{{ d }}</li>{% endfor %}</ul>
       </div>
-      <div class="reveal">
-        <div class="author-card">
-          <div class="avatar">JA</div>
-          <div>
-            <h3>{{ author.name }}</h3>
-            <div class="role">{{ author.role }}</div>
-            <p>{{ author.bio }}</p>
-          </div>
-        </div>
+      {% endfor %}
+    </div>
+
+    <div class="hours-block reveal" style="margin-top:clamp(44px,6vw,68px)">
+      <span class="eyebrow">Horarios</span>
+      <h3 style="font-family:var(--font-display);text-transform:uppercase;font-size:clamp(1.6rem,4vw,2.2rem);letter-spacing:.01em;margin:10px 0 18px">Entrenamos</h3>
+      <div class="hours" style="max-width:520px">
+        <div class="h-row"><b>Lun · Mié · Vie</b><span>21:15 – 22:30 h</span></div>
       </div>
+      <p style="color:var(--muted-d);margin-top:20px">{{ contact.address_ref }}</p>
     </div>
   </div>
 </section>
