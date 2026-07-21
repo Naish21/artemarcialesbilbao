@@ -16,13 +16,13 @@
   <meta property="og:locale" content="es_ES">
   <meta name="theme-color" content="#16130F">
 
-  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/img/favicon.svg">
+  <link rel="icon" href="/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/img/favicon.png">
+  <meta property="og:image" content="https://www.artesmarcialesbilbao.com/img/logo-lg.png">
 
-  <!-- Tipografías -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <!-- Tipografías auto-alojadas (sin llamadas a Google) -->
+  <link rel="preload" href="/fonts/anton-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/archivo-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/css/styles.css">
 
   <!-- Datos estructurados: negocio local (SEO) -->
@@ -49,15 +49,14 @@
   </script>
 </head>
 <body>
+  <div class="season-bar" id="seasonBar" role="status" hidden>
+    <p class="wrap">En agosto cerramos por vacaciones. El nuevo curso comienza el miércoles 2 de septiembre (siempre el primer lunes o miércoles laborable de septiembre).</p>
+  </div>
   <header class="site-header">
     <nav class="wrap nav" aria-label="Principal">
       <a class="brand" href="/">
-<svg class="brand__mark" width="38" height="38" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-  <rect x="1.5" y="1.5" width="37" height="37" rx="3" stroke="currentColor" stroke-width="1.6" opacity=".35"/>
-  <circle cx="20" cy="20" r="12.5" stroke="currentColor" stroke-width="1.6" opacity=".55"/>
-  <path d="M11 27 L24 11" stroke="#D8382B" stroke-width="3.4" stroke-linecap="round"/>
-  <circle cx="24" cy="11" r="2.4" fill="#D8382B"/>
-</svg>        <span>Artes Marciales<br>Bilbao<small>Sambo · Defensa personal</small></span>
+<img class="brand__mark" src="/img/logo.png" width="44" height="44"
+     alt="Escudo de Sambo D.P. Bilbao" loading="eager" decoding="async">        <span>Artes Marciales<br>Bilbao<small>Sambo · Defensa personal</small></span>
       </a>
       <button class="nav__toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
@@ -102,7 +101,7 @@
           </li>
           <li>
             <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
-            <div><div class="k">Horarios</div><div class="v">Sambo: Lunes, miércoles y viernes · 21:15 a 22:30 h<br>Defensa personal: Clases semanales: lunes y miércoles al mediodía</div></div>
+            <div><div class="k">Horarios</div><div class="v">Sambo: Lunes, miércoles y viernes · 21:15 a 22:30 h<br>Defensa personal: Solo en seminarios, con reserva previa</div></div>
           </li>
         </ul>
         <div class="hero__actions" style="margin-top:28px">
@@ -111,8 +110,18 @@
         </div>
       </div>
       <div class="reveal">
-        <iframe class="map-embed" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2905.547476341742!2d-2.940621!3d43.260905!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x321e54ad3a20ddb7!2sJudo%20Club%20Ohisama!5e0!3m2!1sen!2ses!4v1582395721070!5m2!1sen!2ses" loading="lazy" title="Mapa: cómo llegar al club" referrerpolicy="no-referrer-when-downgrade" style="aspect-ratio:1/1"></iframe>
-      </div>
+<div class="map-wrap" style="--map-ratio: 1 / 1">
+  <iframe class="map-embed" data-cookiesrc="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2905.547476341742!2d-2.940621!3d43.260905!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x321e54ad3a20ddb7!2sJudo%20Club%20Ohisama!5e0!3m2!1sen!2ses!4v1582395721070!5m2!1sen!2ses" loading="lazy"
+          title="Mapa: cómo llegar al club" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <div class="map-consent" data-map-placeholder>
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+    <p>El mapa de Google no se carga hasta que aceptes las cookies.</p>
+    <div class="map-consent__actions">
+      <button type="button" class="btn btn--primary" onclick="if(window.AMBCookies){AMBCookies.accept();}">Aceptar y ver el mapa</button>
+      <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&query=43.260905,-2.940621" target="_blank" rel="noopener">Abrir en Google Maps</a>
+    </div>
+  </div>
+</div>      </div>
     </div>
   </div>
 </section>
@@ -133,12 +142,8 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a class="brand" href="/">
-<svg class="brand__mark" width="38" height="38" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-  <rect x="1.5" y="1.5" width="37" height="37" rx="3" stroke="currentColor" stroke-width="1.6" opacity=".35"/>
-  <circle cx="20" cy="20" r="12.5" stroke="currentColor" stroke-width="1.6" opacity=".55"/>
-  <path d="M11 27 L24 11" stroke="#D8382B" stroke-width="3.4" stroke-linecap="round"/>
-  <circle cx="24" cy="11" r="2.4" fill="#D8382B"/>
-</svg>            <span>Artes Marciales<br>Bilbao</span>
+<img class="brand__mark" src="/img/logo.png" width="44" height="44"
+     alt="Escudo de Sambo D.P. Bilbao" loading="eager" decoding="async">            <span>Artes Marciales<br>Bilbao</span>
           </a>
           <p>Club de sambo y defensa personal en el centro de Bilbao. Entrena autodefensa sin armas con nosotros.</p>
           <div class="footer-social">
@@ -166,11 +171,30 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© <span id="year">2026</span> Artes Marciales Bilbao. Todos los derechos reservados.</span>
-        <a href="/privacidad.html">Aviso legal y privacidad</a>
+        <span>© <span id="year">2026</span> Artes Marciales Bilbao · CLUB DEPORTIVO ARMARBIL · NIF G95755187</span>
+        <nav class="footer-legal" aria-label="Legal">
+          <a href="/aviso-legal.html">Aviso legal</a>
+          <a href="/privacidad.html">Privacidad</a>
+          <a href="/terminos.html">Términos del servicio</a>
+          <a href="/cookies.html">Cookies</a>
+          <button type="button" class="footer-legal__btn" onclick="if(window.AMBCookies){AMBCookies.open();}">Configurar cookies</button>
+        </nav>
       </div>
     </div>
   </footer>
+
+  <!-- Aviso de cookies (RGPD): el contenido de terceros no se carga hasta aceptar -->
+  <div class="cookie-banner" id="cookieBanner" hidden>
+    <div class="wrap cookie-banner__inner">
+      <p class="cookie-banner__text">
+        Usamos una cookie técnica para recordar tu elección. Para mostrar el mapa de ubicación cargamos contenido de Google Maps, que puede instalar sus propias cookies. Puedes aceptarlo o rechazarlo. <a href="/cookies.html">Más información</a>.
+      </p>
+      <div class="cookie-banner__actions">
+        <button type="button" class="btn btn--ghost" data-cookie="reject">Rechazar</button>
+        <button type="button" class="btn btn--primary" data-cookie="accept">Aceptar</button>
+      </div>
+    </div>
+  </div>
 
   <a class="wa-fab" href="https://wa.me/34656764922" aria-label="Escríbenos por WhatsApp" target="_blank" rel="noopener">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.6.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.1c-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.3.3-1 .9-1 2.3s1 2.7 1.1 2.9c.2.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>

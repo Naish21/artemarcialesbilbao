@@ -67,15 +67,25 @@ Tu web se sirve por FTP/SFTP. Con un cliente como **FileZilla**:
 
 La web es estática (sin base de datos), así que el formulario necesita un servicio externo. Tienes tres opciones. Se elige con `lead_magnet.provider` en `content/site.yaml`.
 
-### Opción A — MailerLite (recomendada: crea lista + envía el PDF solo)
-Es gratis hasta 1.000 suscriptores y hace justo lo que quieres: la persona deja el email → recibe automáticamente un correo con el PDF → tú te quedas con su email en una lista.
+### Opción A — MailerLite (✅ YA CONFIGURADA Y ACTIVA)
+Ya está funcionando con tu cuenta (`2521369`) y tu formulario (`PttuCZ`): `provider: "mailerlite"` en `content/site.yaml`. El formulario embebido aparece en la página del manual y el script de MailerLite se carga solo en esa página. Si algún día cambias de formulario o de cuenta, solo tienes que actualizar esos dos valores en `content/site.yaml` y volver a ejecutar `python build.py`. Los pasos originales, por si los necesitas:
 
-1. Crea cuenta en mailerlite.com y sube tu PDF (o súbelo a `static/downloads/` y usa el enlace).
-2. Crea un **formulario embebido** y una **automatización**: "cuando alguien se suscribe → enviar email con el manual".
-3. Copia el código embed que te da MailerLite.
-4. En `content/site.yaml` pon `provider: "mailerlite"`.
-5. Pega el embed dentro de `templates/partials/lead_form.html`, donde pone *"pega aquí el embed de MailerLite"*.
-6. `python build.py` y sube de nuevo.
+1. Crea una cuenta en mailerlite.com.
+2. Crea un **grupo** (p. ej. "Manual defensa personal") y un **formulario embebido** (Embedded form) con los campos Nombre y Email. Activa la casilla de consentimiento RGPD del propio formulario.
+3. Crea una **automatización**: *cuando alguien se une al grupo/formulario → enviar un email con el manual en PDF adjunto o con el enlace de descarga*. (Si prefieres, sube el PDF a `static/downloads/` y enlázalo desde ese email.)
+4. En los ajustes del formulario, pon como **acción de éxito** una redirección a `https://www.artesmarcialesbilbao.com/gracias.html`.
+5. Abre el código del formulario en MailerLite. Verás dos datos:
+   - En el script: `ml('account', '123456')` → ese número es tu **account**.
+   - En el div: `<div class="ml-embedded" data-form="a1b2c3">` → ese código es tu **form**.
+6. En `content/site.yaml`, dentro de `lead_magnet`, pon:
+   ```yaml
+   provider: "mailerlite"
+   mailerlite_account: "123456"
+   mailerlite_form: "a1b2c3"
+   ```
+7. `python build.py` y sube de nuevo. Listo: el formulario embebido aparece en la página del manual y el PDF se envía solo. (No hace falta tocar ningún HTML; el script de MailerLite se carga automáticamente al poner esos datos.)
+
+> El aspecto del formulario (colores, tipografía, fondo) se ajusta dentro del editor de MailerLite. Para que encaje con la web, usa fondo transparente o claro y el rojo `#D8382B` en el botón.
 
 ### Opción B — Formspree (rápido, te llega el email a tu correo)
 1. Crea un formulario en formspree.io y copia tu ID (algo como `xayzabcd`).
@@ -86,6 +96,22 @@ Es gratis hasta 1.000 suscriptores y hace justo lo que quieres: la persona deja 
 El botón abre el correo del visitante con el mensaje ya escrito hacia `admin@artesmarcialesbilbao.com`. Tú respondes con el PDF a mano. Es lo que hay activo ahora mismo; sirve para arrancar, pero **para captar lista de verdad usa la opción A**.
 
 > El PDF que quieras enviar puedes dejarlo en `static/downloads/manual-defensa-personal-mujeres.pdf` (ya está referenciado en `site.yaml` → `manual.pdf_file`).
+
+---
+
+## 4b. Aviso de verano (agosto cerrado / inicio de curso)
+
+Hay una barra roja arriba que aparece **automáticamente solo en julio y agosto** (lo decide el navegador del visitante; el resto del año no se ve). Avisa de que en agosto cerráis y de cuándo empieza el curso.
+
+**Cada año hay que actualizar una línea**: en `content/site.yaml`, dentro de `season`, cambia `course_start` a la nueva fecha (el primer lunes o miércoles laborable de septiembre). Ejemplo actual:
+
+```yaml
+season:
+  course_start: "miércoles 2 de septiembre"
+  message: "En agosto cerramos por vacaciones. El nuevo curso comienza el {start} (siempre el primer lunes o miércoles laborable de septiembre)."
+```
+
+`{start}` se sustituye solo por la fecha. Luego `python build.py` y subir.
 
 ---
 

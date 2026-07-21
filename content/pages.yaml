@@ -12,6 +12,22 @@ home:
     en un ambiente cercano, y damos herramientas reales para que confíes en ti.
   hero_cta_primary: "Prueba una clase gratis"
   hero_cta_secondary: "Descarga el manual gratis"
+  # Imagen de cabecera (se muestra oscurecida detrás del texto)
+  hero_image: "/img/hero-home.jpg"
+
+  # Galería "así entrenamos" (puedes añadir o quitar fotos libremente)
+  gallery_eyebrow: "El club por dentro"
+  gallery_title: "Así entrenamos"
+  gallery:
+    - img: "/img/grupo.jpg"
+      alt: "Grupo del club tras un entrenamiento de sambo en Bilbao"
+      feature: true
+    - img: "/img/dpf-3.jpg"
+      alt: "Clase de defensa personal para mujeres en el tatami del club"
+    - img: "/img/nieve-1.jpg"
+      alt: "Técnica de sambo ejecutada en la nieve"
+    - img: "/img/seminario-1.jpg"
+      alt: "Seminario con instructor invitado en Sambo DP Bilbao"
 
   intro_eyebrow: "Nuestro club"
   intro_title: "Un grupo de gente que entrena en serio, sin humos"
@@ -29,7 +45,7 @@ home:
       link_label: "Conoce el sambo"
     - tag: "02"
       title: "Defensa personal para mujeres"
-      text: "Clases semanales y seminarios de 8 h. Técnicas sencillas y eficaces, sin necesidad de fuerza física, para cualquier edad y nivel."
+      text: "Seminarios de 8 h de formación intensiva. Técnicas sencillas y eficaces, sin necesidad de fuerza física, para cualquier edad y nivel."
       link: "/defensa-personal.html"
       link_label: "Ver cursos y seminarios"
     - tag: "03"
@@ -53,10 +69,42 @@ home:
 sambo:
   hero_eyebrow: "самозащита без оружия"
   hero_title: "Sambo"
+  hero_image: "/img/hero-sambo.jpg"
   hero_lede: >
     En ruso significa, literalmente, «autodefensa sin armas». Un deporte de combate
     y sistema de defensa personal desarrollado en la antigua Unión Soviética, con
     raíces en el judo, la lucha, el boxeo y otras artes marciales.
+
+  # Galería promocional en la nieve
+  gallery_eyebrow: "Sambo en estado puro"
+  gallery_title: "Autodefensa sin armas"
+  gallery:
+    - img: "/img/nieve-4.jpg"
+      alt: "Proyección de sambo sobre la nieve en un hayedo"
+      wide: true
+    - img: "/img/nieve-1.jpg"
+      alt: "Técnica de golpeo de sambo sobre la nieve"
+    - img: "/img/nieve-2.jpg"
+      alt: "Barrido de sambo sobre la nieve"
+    - img: "/img/nieve-3.jpg"
+      alt: "Patada de sambo sobre la nieve con la kurtka roja"
+
+  # Comunidad y seminarios (fotos con pie de foto)
+  community_eyebrow: "Comunidad"
+  community_title: "Entrenamos y seguimos aprendiendo"
+  community_text: >
+    Un grupo que entrena en serio y que no deja de crecer. Cada temporada traemos a
+    instructores invitados para ampliar conocimientos y compartir tatami con ellos.
+  community:
+    - img: "/img/grupo.jpg"
+      alt: "Grupo del club tras entrenar"
+      caption: "Nuestro grupo tras un entrenamiento"
+    - img: "/img/seminario-1.jpg"
+      alt: "Seminario con instructor invitado"
+      caption: "Seminario con instructor invitado"
+    - img: "/img/seminario-2.jpg"
+      alt: "Seminario de grappling con instructor invitado"
+      caption: "Ampliando conocimientos en el tatami"
   sections:
     - title: "¿Qué es el sambo?"
       body: >
@@ -95,6 +143,24 @@ sambo:
 defensa:
   hero_eyebrow: "Defensa personal para mujeres"
   hero_title: "Recursos reales para defenderte"
+  hero_image: "/img/hero-defensa.jpg"
+
+  # Galería de las clases y seminarios de defensa personal
+  gallery_eyebrow: "En el tatami"
+  gallery_title: "Así son nuestras clases"
+  gallery:
+    - img: "/img/dpf-5.jpg"
+      alt: "Grupo de un seminario de defensa personal para mujeres"
+      feature: true
+    - img: "/img/dpf-1.jpg"
+      alt: "Prácticas de golpeo con manoplas en clase de defensa personal"
+    - img: "/img/dpf-2.jpg"
+      alt: "Ejercicio por parejas en clase de defensa personal femenina"
+    - img: "/img/dpf-3.jpg"
+      alt: "Alumnas practicando defensa personal en el tatami"
+    - img: "/img/dpf-4.jpg"
+      alt: "Instructor guiando una práctica de defensa personal"
+
   hero_lede: >
     Todos los instructores de Sambo DP Bilbao estamos concienciados con el problema
     de la violencia contra la mujer. Queremos darte herramientas para defenderte de
@@ -102,8 +168,6 @@ defensa:
     condición física.
   formats_title: "Dos formas de formarte"
   formats:
-    - title: "Clases semanales"
-      text: "Lunes y miércoles al mediodía. Para trabajar la técnica de forma continua y afianzarla con el tiempo."
     - title: "Seminarios intensivos"
       text: "De 8 horas mínimo, con reserva previa. Organizamos al menos dos al año en Bilbao para practicar y asimilar el temario con eficacia."
     - title: "Grupos a medida"
@@ -126,5 +190,5 @@ contacto:
     Escríbenos o llámanos y te contamos todo sin compromiso.
 
 privacidad:
-  title: "Aviso legal y política de privacidad"
+  title: "Política de privacidad"
   updated: "Julio de 2026"

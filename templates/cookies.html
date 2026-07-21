@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Política de cookies · Artes Marciales Bilbao{% endblock %}
+{% block description %}Política de cookies del sitio web de {{ legal.entity_full }} ({{ site.name }}).{% endblock %}
+{% block head_extra %}<meta name="robots" content="noindex">{% endblock %}
+
+{% block content %}
+<section class="section matgrid" style="padding-top:clamp(56px,8vw,110px)">
+  <div class="wrap">
+    <span class="eyebrow">Legal</span>
+    <h1 style="font-size:clamp(2.2rem,6vw,3.6rem);margin:14px 0 8px">Política de cookies</h1>
+    <p style="color:var(--muted-d)">Última actualización: {{ pages.privacidad.updated }}</p>
+
+    <div class="legal" style="margin-top:36px">
+
+      <h2>1. ¿Qué son las cookies?</h2>
+      <p>Una cookie es un pequeño archivo que un sitio web guarda en tu dispositivo al visitarlo. Se usan para recordar información o para que funcionen determinados servicios.</p>
+
+      <h2>2. Cookies que usa este sitio</h2>
+      <p>Este sitio es estático y <b>no utiliza cookies propias de seguimiento ni herramientas de analítica</b> (no hay Google Analytics ni similares). Únicamente se emplean:</p>
+
+      <h3 style="font-size:1.15rem;margin:20px 0 8px;color:var(--bone)">Cookies técnicas (necesarias)</h3>
+      <p>Guardamos tu elección sobre las cookies para no volver a preguntártela en cada visita. Esta información se almacena en tu propio navegador, es imprescindible para respetar tu decisión y está exenta de consentimiento.</p>
+
+      <h3 style="font-size:1.15rem;margin:20px 0 8px;color:var(--bone)">Cookies de terceros (solo con tu consentimiento)</h3>
+      <p>Para mostrar cómo llegar al club incrustamos un <b>mapa de Google Maps</b> (Google Ireland Ltd.). Este servicio puede instalar cookies propias y tratar datos como tu dirección IP según su propia política. <b>El mapa no se carga hasta que aceptas las cookies.</b> Si no las aceptas, en su lugar verás un enlace para abrir el mapa directamente en Google Maps.</p>
+      <p>En la página del manual se muestra un <b>formulario de suscripción de MailerLite</b> para enviarte el PDF. Al cargarlo, MailerLite puede instalar cookies propias necesarias para el funcionamiento del formulario, y se emplea <b>Google reCAPTCHA</b> como protección antispam, que también puede instalar cookies. Estos servicios solo intervienen en esa página y al usar el formulario.</p>
+      <p>Si en el futuro se incrusta contenido de redes sociales (Instagram, Tumblr), dichos servicios podrían instalar también sus propias cookies.</p>
+
+      <h2>3. Cómo gestionar o retirar tu consentimiento</h2>
+      <p>Puedes cambiar tu elección en cualquier momento pulsando en <a href="#" onclick="if(window.AMBCookies){AMBCookies.open();}return false;">«Configurar cookies»</a> (también disponible en el pie de página). Además, puedes bloquear o eliminar las cookies desde la configuración de tu navegador. Aquí tienes las guías de los más habituales:</p>
+      <ul>
+        <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">Google Chrome</a></li>
+        <li><a href="https://support.mozilla.org/es/kb/Deshabilitar%20cookies%20de%20terceros" target="_blank" rel="noopener">Mozilla Firefox</a></li>
+        <li><a href="https://support.apple.com/es-es/guide/safari/sfri11471/mac" target="_blank" rel="noopener">Safari</a></li>
+        <li><a href="https://support.microsoft.com/es-es/microsoft-edge" target="_blank" rel="noopener">Microsoft Edge</a></li>
+      </ul>
+
+      <h2>4. Más información</h2>
+      <p>Puedes consultar cómo tratamos tus datos personales en la <a href="/privacidad.html">Política de privacidad</a> y la información identificativa del titular en el <a href="/aviso-legal.html">Aviso legal</a>.</p>
+
+    </div>
+
+    <div class="hero__actions" style="margin-top:36px">
+      <a class="btn btn--primary" href="/">Volver al inicio <span class="btn__arrow">→</span></a>
+      <button class="btn btn--ghost" type="button" onclick="if(window.AMBCookies){AMBCookies.open();}">Configurar cookies</button>
+    </div>
+  </div>
+</section>
+{% endblock %}

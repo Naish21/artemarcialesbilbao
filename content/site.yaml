@@ -35,18 +35,45 @@ social:
   instagram_url: "https://www.instagram.com/sambodpbilbao/"
   tumblr_url: "https://artesmarcialesbilbao.tumblr.com/"
 
+# --- Datos fiscales / legales del titular del sitio ----------------------------
+# Titular: club deportivo sin ánimo de lucro (NIF que empieza por G).
+legal:
+  entity: "Club Deportivo Armarbil"
+  entity_full: "CLUB DEPORTIVO ARMARBIL"
+  nif: "G95755187"
+  # Domicilio a efectos legales (el registrado; distinto del lugar de entrenamiento)
+  address: "Juan de Garay 5, lonja · 48003 Bilbao (Bizkaia)"
+  registry: "Registro de Entidades Deportivas del País Vasco, nº CD0005742 (inscrito el 29/01/2014)"
+  modalities: "Lucha y Sambo"
+  jurisdiction: "Bilbao (Bizkaia)"
+
 schedule:
   sambo: "Lunes, miércoles y viernes · 21:15 a 22:30 h"
-  defensa: "Clases semanales: lunes y miércoles al mediodía"
+  defensa: "Solo en seminarios, con reserva previa"
   seminarios: "Seminarios de 8 h (mínimo), con reserva previa. Al menos dos al año en Bilbao."
 
+# --- Aviso de temporada -------------------------------------------------------
+# Se muestra automáticamente SOLO en julio y agosto (lo controla el navegador).
+# ACTUALIZA cada año la fecha de inicio (primer lunes o miércoles laborable de septiembre).
+season:
+  course_start: "miércoles 2 de septiembre"
+  # {start} se sustituye por course_start. Puedes editar el texto libremente.
+  message: "En agosto cerramos por vacaciones. El nuevo curso comienza el {start} (siempre el primer lunes o miércoles laborable de septiembre)."
+
 # --- Imán de leads: PDF gratis del manual a cambio del email --------------------
-# Sustituye MAILERLITE_FORM_ACTION o FORMSPREE_ID cuando lo configures (ver README).
+# Para activar MailerLite: pon provider "mailerlite" y rellena los dos IDs de abajo.
 lead_magnet:
-  # Proveedor: "mailto" (funciona ya), "formspree" o "mailerlite"
-  provider: "mailto"
-  formspree_id: "TU_ID_FORMSPREE"        # ej. xayzabcd  -> https://formspree.io
-  mailerlite_action: "TU_ACTION_MAILERLITE"
+  # Proveedor: "mailto" (funciona ya, sin configurar), "mailerlite" o "formspree"
+  provider: "mailerlite"
+  # --- MailerLite ---
+  # 1) mailerlite_account: el número de tu cuenta. Aparece en el script de MailerLite
+  #    como  ml('account', '123456')  -> aquí pondrías  "123456"
+  mailerlite_account: "2521369"
+  # 2) mailerlite_form: el identificador del formulario embebido. Aparece como
+  #    <div class="ml-embedded" data-form="xxxxxx">  -> aquí pondrías  "xxxxxx"
+  mailerlite_form: "PttuCZ"
+  # --- Formspree (alternativa) ---
+  formspree_id: "TU_ID_FORMSPREE"
   success_url: "/gracias.html"
 
 manual:

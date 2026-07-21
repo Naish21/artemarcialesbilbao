@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Aviso legal · Artes Marciales Bilbao{% endblock %}
+{% block description %}Aviso legal e información identificativa de {{ legal.entity_full }} ({{ site.name }}).{% endblock %}
+{% block head_extra %}<meta name="robots" content="noindex">{% endblock %}
+
+{% block content %}
+<section class="section matgrid" style="padding-top:clamp(56px,8vw,110px)">
+  <div class="wrap">
+    <span class="eyebrow">Legal</span>
+    <h1 style="font-size:clamp(2.2rem,6vw,3.6rem);margin:14px 0 8px">Aviso legal</h1>
+    <p style="color:var(--muted-d)">Última actualización: {{ pages.privacidad.updated }}</p>
+
+    <div class="legal" style="margin-top:36px">
+
+      <h2>1. Datos identificativos</h2>
+      <p>En cumplimiento de la Ley 34/2002, de servicios de la sociedad de la información y de comercio electrónico (LSSI-CE), se informa de que este sitio web es titularidad de:</p>
+      <ul>
+        <li><b>Titular:</b> {{ legal.entity_full }}</li>
+        <li><b>NIF:</b> {{ legal.nif }}</li>
+        <li><b>Domicilio:</b> {{ legal.address }}</li>
+        <li><b>Correo electrónico:</b> {{ contact.email }}</li>
+        <li><b>Teléfono:</b> {{ contact.phone_display }}</li>
+        <li><b>Datos registrales:</b> {{ legal.registry }}</li>
+        <li><b>Modalidades deportivas inscritas:</b> {{ legal.modalities }}</li>
+      </ul>
+      <p>{{ legal.entity_full }} es una entidad deportiva sin ánimo de lucro. El lugar donde se imparten las actividades es {{ contact.address_line1 }}, {{ contact.address_line2 }}, {{ contact.postal_code }} {{ contact.city }} ({{ contact.province }}).</p>
+
+      <h2>2. Objeto</h2>
+      <p>Este sitio informa sobre las actividades del club (sambo y defensa personal), permite solicitar el «Manual de Defensa Personal para Mujeres» en PDF y facilita el contacto con el club.</p>
+
+      <h2>3. Propiedad intelectual e industrial</h2>
+      <p>Los contenidos, textos, fotografías, el logotipo, el diseño y el código de este sitio son titularidad de {{ legal.entity_full }} o de sus respectivos titulares, y están protegidos por la normativa de propiedad intelectual e industrial. El «Manual de Defensa Personal para Mujeres» es una obra protegida por derechos de autor. Queda prohibida su reproducción, distribución, comunicación pública o transformación sin autorización expresa.</p>
+
+      <h2>4. Responsabilidad y enlaces</h2>
+      <p>{{ legal.entity }} procura que la información sea correcta y esté actualizada, pero no garantiza la ausencia de errores ni la disponibilidad continua del sitio. El sitio puede contener enlaces a terceros (redes sociales, mapa de ubicación, plataforma de compra del manual) sobre cuyos contenidos y políticas {{ legal.entity }} no tiene control.</p>
+
+      <h2>5. Protección de datos y cookies</h2>
+      <p>El tratamiento de datos personales se detalla en la <a href="/privacidad.html">Política de privacidad</a>, y el uso de cookies en la <a href="/cookies.html">Política de cookies</a>. El uso del sitio se rige además por los <a href="/terminos.html">Términos del servicio</a>.</p>
+
+      <h2>6. Legislación aplicable</h2>
+      <p>El presente aviso legal se rige por la legislación española. Para cualquier controversia, y salvo que la normativa de consumo disponga otro fuero, las partes se someten a los juzgados y tribunales de {{ legal.jurisdiction }}.</p>
+
+    </div>
+
+    <div class="hero__actions" style="margin-top:36px">
+      <a class="btn btn--primary" href="/">Volver al inicio <span class="btn__arrow">→</span></a>
+    </div>
+  </div>
+</section>
+{% endblock %}

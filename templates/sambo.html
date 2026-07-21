@@ -4,8 +4,8 @@
 {% block description %}Qué es el sambo, su origen, fundamentos y beneficios. Entrena sambo —autodefensa sin armas— en el centro de Bilbao. Lunes, miércoles y viernes.{% endblock %}
 
 {% block content %}
-<section class="hero matgrid" style="padding-block:clamp(60px,10vw,120px)">
-  <div class="hero__circle" aria-hidden="true"></div>
+<section class="hero hero--photo" style="--hero-img:url('{{ s.hero_image }}');padding-block:clamp(60px,10vw,120px)">
+  <span class="hero__ru" aria-hidden="true">{{ site.heritage_es }}</span>
   <div class="wrap hero__inner">
     <span class="eyebrow" style="text-transform:none;letter-spacing:.1em">{{ s.hero_eyebrow }}</span>
     <h1 class="hero__title" style="font-size:clamp(3.4rem,12vw,8rem)">{{ s.hero_title }}</h1>
@@ -13,6 +13,18 @@
     <div class="hero__actions">
       <a class="btn btn--primary" href="/contacto.html">Prueba una clase <span class="btn__arrow">→</span></a>
     </div>
+  </div>
+</section>
+
+<!-- GALERÍA nieve -->
+<section class="section matgrid">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">{{ s.gallery_eyebrow }}</span>
+      <h2>{{ s.gallery_title }}</h2>
+    </div>
+    {% set items = s.gallery %}
+    {% include "partials/gallery.html" %}
   </div>
 </section>
 
@@ -49,6 +61,19 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- COMUNIDAD / SEMINARIOS -->
+<section class="section section--paper">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">{{ s.community_eyebrow }}</span>
+      <h2>{{ s.community_title }}</h2>
+      <p>{{ s.community_text }}</p>
+    </div>
+    {% set items = s.community %}
+    {% include "partials/gallery.html" %}
   </div>
 </section>
 

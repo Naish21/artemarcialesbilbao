@@ -1,0 +1,9 @@
+{# Espera la variable `items`: lista de { img, alt, feature?, wide?, caption? } #}
+<div class="gallery reveal">
+  {% for g in items %}
+  <figure{% if g.feature %} class="span-2"{% elif g.wide %} class="span-all"{% endif %}>
+    <img src="{{ g.img }}" alt="{{ g.alt }}" loading="lazy" decoding="async">
+    {% if g.caption %}<figcaption>{{ g.caption }}</figcaption>{% endif %}
+  </figure>
+  {% endfor %}
+</div>

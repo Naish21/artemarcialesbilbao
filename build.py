@@ -37,7 +37,10 @@ PAGES = {
     "manual.html":           ("manual.html",           "manual"),
     "contacto.html":         ("contacto.html",         "contacto"),
     "gracias.html":          ("gracias.html",          None),
+    "aviso-legal.html":      ("aviso-legal.html",      None),
     "privacidad.html":       ("privacidad.html",       None),
+    "terminos.html":         ("terminos.html",         None),
+    "cookies.html":          ("cookies.html",          None),
 }
 
 env = Environment(
@@ -53,7 +56,7 @@ def build():
     OUT.mkdir(parents=True)
 
     # Copiar estáticos (css, js, img, downloads) a la raíz de output/
-    for sub in ("css", "js", "img", "downloads"):
+    for sub in ("css", "js", "img", "fonts", "downloads"):
         src = STATIC / sub
         if src.exists():
             shutil.copytree(src, OUT / sub)

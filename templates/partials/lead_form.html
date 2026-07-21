@@ -22,20 +22,19 @@
   </form>
 
 {% elif lm.provider == 'mailerlite' %}
-  {# Pega aquí el formulario embed de MailerLite. Mientras tanto mostramos el bloque de ayuda. #}
-  <div class="ml-embed" data-account="TU_CUENTA">
-    <!-- INICIO embed MailerLite: sustituye este bloque por el código que te da MailerLite -->
-    <form class="lead-form" onsubmit="return false;">
-      <div class="row">
-        <div class="field"><label>Nombre</label><input type="text" placeholder="Tu nombre"></div>
-        <div class="field"><label>Email</label><input type="email" placeholder="tucorreo@ejemplo.com"></div>
-      </div>
-      {% include "partials/consent.html" %}
-      <button class="btn btn--primary" type="submit">Enviadme el manual gratis <span class="btn__arrow">→</span></button>
-      <p class="form-note">⚠️ Placeholder: pega el embed real de MailerLite (ver README) para que se envíe el PDF automáticamente.</p>
-    </form>
-    <!-- FIN embed MailerLite -->
-  </div>
+  {% if lm.mailerlite_form and lm.mailerlite_form != 'TU_FORM_ID' %}
+    {# Formulario embebido oficial de MailerLite. El envío del PDF y el redirect a
+       /gracias.html se configuran dentro de MailerLite (ver README). #}
+    <div class="ml-embed-wrap">
+      <div class="ml-embedded" data-form="{{ lm.mailerlite_form }}"></div>
+    </div>
+  {% else %}
+    {# Aún sin IDs de MailerLite: mostramos un aviso y un contacto de reserva. #}
+    <div class="lead-form">
+      <p class="form-note" style="margin-top:0">Formulario de descarga en preparación. Mientras tanto, escríbenos y te enviamos el manual:</p>
+      <a class="btn btn--primary" href="mailto:{{ contact.email }}?subject=Quiero%20el%20manual%20de%20defensa%20personal">Pídenos el manual gratis <span class="btn__arrow">→</span></a>
+    </div>
+  {% endif %}
 
 {% else %}
   {# mailto: funciona el primer día sin configurar nada. Compone un email al club. #}

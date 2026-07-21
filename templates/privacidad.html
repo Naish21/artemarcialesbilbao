@@ -1,41 +1,47 @@
 {% extends "base.html" %}
 {% set p = pages.privacidad %}
-{% block title %}Aviso legal y privacidad · Artes Marciales Bilbao{% endblock %}
-{% block description %}Aviso legal y política de privacidad de Artes Marciales Bilbao.{% endblock %}
+{% block title %}Política de privacidad · Artes Marciales Bilbao{% endblock %}
+{% block description %}Política de privacidad de {{ legal.entity_full }} ({{ site.name }}): responsable, finalidad, legitimación y derechos sobre tus datos.{% endblock %}
 {% block head_extra %}<meta name="robots" content="noindex">{% endblock %}
 
 {% block content %}
 <section class="section matgrid" style="padding-top:clamp(56px,8vw,110px)">
   <div class="wrap">
     <span class="eyebrow">Legal</span>
-    <h1 style="font-size:clamp(2.2rem,6vw,3.6rem);margin:14px 0 8px">{{ p.title }}</h1>
+    <h1 style="font-size:clamp(2.2rem,6vw,3.6rem);margin:14px 0 8px">Política de privacidad</h1>
     <p style="color:var(--muted-d)">Última actualización: {{ p.updated }}</p>
 
     <div class="legal" style="margin-top:36px">
-      <p><b style="color:var(--bone)">Nota:</b> completa los datos entre corchetes con tu información fiscal real antes de publicar.</p>
+      <p>Conforme al Reglamento (UE) 2016/679 (RGPD) y a la Ley Orgánica 3/2018 (LOPDGDD), te informamos de cómo tratamos tus datos personales cuando solicitas el manual o contactas con nosotros a través de este sitio.</p>
 
-      <h2>1. Titular del sitio</h2>
-      <p>Este sitio web es titularidad de <b>[Nombre y apellidos / razón social]</b>, con NIF <b>[NIF]</b> y domicilio en {{ contact.address_line2 }}, {{ contact.postal_code }} {{ contact.city }} ({{ contact.province }}). Contacto: {{ contact.email }} · {{ contact.phone_display }}.</p>
-
-      <h2>2. Objeto</h2>
-      <p>Este sitio informa sobre las actividades del club (sambo y defensa personal) y permite solicitar el manual de defensa personal en PDF y contactar con el club.</p>
-
-      <h2>3. Protección de datos (RGPD y LOPDGDD)</h2>
-      <p><b>Responsable:</b> [Nombre / razón social] · {{ contact.email }}.</p>
+      <h2>1. Responsable del tratamiento</h2>
       <ul>
-        <li><b>Qué datos tratamos:</b> nombre y correo electrónico que nos facilitas al solicitar el manual o al contactar.</li>
-        <li><b>Con qué finalidad:</b> enviarte el manual en PDF, atender tu consulta y, si lo consientes, remitirte información sobre cursos y actividades del club.</li>
-        <li><b>Legitimación:</b> tu consentimiento, que puedes retirar en cualquier momento.</li>
-        <li><b>Conservación:</b> mientras no solicites la baja o durante el tiempo necesario para cumplir obligaciones legales.</li>
-        <li><b>Destinatarios:</b> no se ceden datos a terceros salvo obligación legal. Los formularios pueden gestionarse mediante un proveedor de email marketing que actúa como encargado del tratamiento.</li>
-        <li><b>Tus derechos:</b> acceso, rectificación, supresión, oposición, limitación y portabilidad, escribiendo a {{ contact.email }}. También puedes reclamar ante la Agencia Española de Protección de Datos (aepd.es).</li>
+        <li><b>Titular:</b> {{ legal.entity_full }}</li>
+        <li><b>NIF:</b> {{ legal.nif }}</li>
+        <li><b>Domicilio:</b> {{ legal.address }}</li>
+        <li><b>Correo electrónico:</b> {{ contact.email }}</li>
       </ul>
 
-      <h2>4. Cookies</h2>
-      <p>Este sitio es estático y no instala cookies propias de seguimiento. Al mostrar el mapa de Google e incrustar contenido de Instagram o Tumblr, esos servicios pueden instalar sus propias cookies según sus políticas. [Ajusta este apartado si añades analítica.]</p>
+      <h2>2. Qué datos tratamos</h2>
+      <p>El nombre y el correo electrónico que nos facilitas al solicitar el manual en PDF o al ponerte en contacto con el club. No tratamos categorías especiales de datos.</p>
 
-      <h2>5. Propiedad intelectual</h2>
-      <p>Los contenidos, textos y logotipos de este sitio pertenecen a sus titulares. No se permite su reproducción sin autorización.</p>
+      <h2>3. Con qué finalidad</h2>
+      <p>Para enviarte el manual en PDF, atender tu consulta y, si lo consientes expresamente, remitirte información sobre cursos, seminarios y actividades del club.</p>
+
+      <h2>4. Legitimación</h2>
+      <p>La base legal es tu consentimiento (art. 6.1.a RGPD), que otorgas al marcar la casilla del formulario y que puedes retirar en cualquier momento sin que ello afecte a la licitud del tratamiento previo a su retirada.</p>
+
+      <h2>5. Plazo de conservación</h2>
+      <p>Conservamos tus datos mientras no solicites la baja o durante el tiempo necesario para cumplir obligaciones legales.</p>
+
+      <h2>6. Destinatarios y encargados</h2>
+      <p>No se ceden datos a terceros salvo obligación legal. La gestión del formulario y del envío de correos se realiza a través de <b>MailerLite</b> (MailerLite, UAB), que actúa como encargada del tratamiento conforme al art. 28 del RGPD, con contrato de encargo y las garantías adecuadas para cualquier transferencia internacional de datos.</p>
+
+      <h2>7. Tus derechos</h2>
+      <p>Puedes ejercer los derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad escribiendo a <a href="mailto:{{ contact.email }}">{{ contact.email }}</a>, indicando el derecho que deseas ejercer. Si consideras que no hemos atendido correctamente tu solicitud, puedes presentar una reclamación ante la Agencia Española de Protección de Datos (<a href="https://www.aepd.es" target="_blank" rel="noopener">aepd.es</a>).</p>
+
+      <h2>8. Cookies</h2>
+      <p>El uso de cookies se detalla en la <a href="/cookies.html">Política de cookies</a>. Puedes consultar también el <a href="/aviso-legal.html">Aviso legal</a> y los <a href="/terminos.html">Términos del servicio</a>.</p>
     </div>
 
     <div class="hero__actions" style="margin-top:36px">

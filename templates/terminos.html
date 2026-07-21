@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}Términos del servicio · Artes Marciales Bilbao{% endblock %}
+{% block description %}Términos del servicio y condiciones de uso del sitio web de {{ legal.entity_full }} ({{ site.name }}).{% endblock %}
+{% block head_extra %}<meta name="robots" content="noindex">{% endblock %}
+
+{% block content %}
+<section class="section matgrid" style="padding-top:clamp(56px,8vw,110px)">
+  <div class="wrap">
+    <span class="eyebrow">Legal</span>
+    <h1 style="font-size:clamp(2.2rem,6vw,3.6rem);margin:14px 0 8px">Términos del servicio</h1>
+    <p style="color:var(--muted-d)">Condiciones de uso · Última actualización: {{ pages.privacidad.updated }}</p>
+
+    <div class="legal" style="margin-top:36px">
+
+      <h2>1. Titular</h2>
+      <p>El titular de este sitio web es {{ legal.entity_full }}, con NIF {{ legal.nif }} y domicilio en {{ legal.address }}. Contacto: {{ contact.email }} · {{ contact.phone_display }}.</p>
+
+      <h2>2. Objeto y aceptación</h2>
+      <p>Estas condiciones regulan el acceso y uso de este sitio web, de carácter informativo sobre las actividades del club (sambo y defensa personal) y sobre el «Manual de Defensa Personal para Mujeres». El acceso al sitio es gratuito y implica la aceptación de estas condiciones; si no estás de acuerdo con ellas, te rogamos que no lo utilices.</p>
+
+      <h2>3. Uso del sitio</h2>
+      <p>Te comprometes a hacer un uso lícito y adecuado del sitio y a no emplearlo para actividades contrarias a la ley, a la moral o al orden público, ni para dañar, sobrecargar o deteriorar el sitio o impedir su normal utilización.</p>
+
+      <h2>4. Actividades, seminarios y clase de prueba</h2>
+      <p>La información sobre horarios, seminarios, precios y disponibilidad es orientativa y puede variar. La reserva de plazas, seminarios o de la clase de prueba se confirma por los canales de contacto indicados (teléfono, WhatsApp o correo). La práctica de artes marciales y de defensa personal conlleva esfuerzo físico; recomendamos valorar tu estado de salud y, en caso de duda, consultar con un profesional sanitario antes de participar.</p>
+
+      <h2>5. El manual y sus contenidos</h2>
+      <p>El «Manual de Defensa Personal para Mujeres» y el resto de contenidos del sitio tienen carácter divulgativo e informativo. No sustituyen la formación presencial ni el asesoramiento profesional, jurídico o de seguridad. {{ legal.entity }} no se responsabiliza del uso que cada persona haga de dichos contenidos.</p>
+
+      <h2>6. Compra del manual en papel</h2>
+      <p>La versión en papel del manual se adquiere a través de una plataforma externa (CoolLibri), ajena a este sitio. La contratación, el pago, el envío y la atención al cliente de esa compra se rigen por las condiciones y la política de privacidad de dicha plataforma. {{ legal.entity }} no interviene como vendedor en esa transacción.</p>
+
+      <h2>7. Propiedad intelectual e industrial</h2>
+      <p>Todos los contenidos del sitio (textos, fotografías, logotipo, diseño y código) son titularidad de {{ legal.entity_full }} o de terceros que han autorizado su uso, y están protegidos por la normativa de propiedad intelectual e industrial. Queda prohibida su reproducción, distribución, comunicación pública o transformación sin autorización expresa.</p>
+
+      <h2>8. Enlaces a terceros</h2>
+      <p>El sitio puede contener enlaces a sitios de terceros (redes sociales, plataforma de compra del manual, mapas). {{ legal.entity }} no controla ni se responsabiliza de sus contenidos, disponibilidad o políticas.</p>
+
+      <h2>9. Responsabilidad</h2>
+      <p>{{ legal.entity }} procura que la información del sitio sea correcta y esté actualizada, pero no garantiza la ausencia de errores ni la disponibilidad continua del servicio. En la medida permitida por la ley, no se responsabiliza de los daños derivados del uso del sitio o de la imposibilidad de acceder a él.</p>
+
+      <h2>10. Protección de datos y cookies</h2>
+      <p>El tratamiento de tus datos se rige por la <a href="/privacidad.html">Política de privacidad</a>, la información del titular por el <a href="/aviso-legal.html">Aviso legal</a>, y el uso de cookies por la <a href="/cookies.html">Política de cookies</a>.</p>
+
+      <h2>11. Modificaciones</h2>
+      <p>{{ legal.entity }} podrá modificar estas condiciones en cualquier momento. La versión aplicable será la publicada en el sitio en el momento del acceso.</p>
+
+      <h2>12. Legislación aplicable y jurisdicción</h2>
+      <p>Estas condiciones se rigen por la legislación española. Para cualquier controversia, y salvo que la normativa de consumo disponga otro fuero, las partes se someten a los juzgados y tribunales de {{ legal.jurisdiction }}.</p>
+
+    </div>
+
+    <div class="hero__actions" style="margin-top:36px">
+      <a class="btn btn--primary" href="/">Volver al inicio <span class="btn__arrow">→</span></a>
+    </div>
+  </div>
+</section>
+{% endblock %}

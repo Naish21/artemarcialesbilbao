@@ -4,8 +4,7 @@
 {% block description %}Cursos y seminarios de defensa personal para mujeres en Bilbao. Técnicas sencillas y eficaces, sin fuerza física, para cualquier edad. Manual gratis en PDF.{% endblock %}
 
 {% block content %}
-<section class="hero matgrid" style="padding-block:clamp(60px,10vw,120px)">
-  <div class="hero__circle" aria-hidden="true"></div>
+<section class="hero hero--photo" style="--hero-img:url('{{ d.hero_image }}');padding-block:clamp(60px,10vw,120px)">
   <div class="wrap hero__inner">
     <span class="eyebrow">{{ d.hero_eyebrow }}</span>
     <h1 class="hero__title" style="font-size:clamp(2.8rem,8.5vw,6rem)">{{ d.hero_title }}</h1>
@@ -24,7 +23,7 @@
       <span class="eyebrow">Formación</span>
       <h2>{{ d.formats_title }}</h2>
     </div>
-    <div class="pillars reveal">
+    <div class="pillars{% if d.formats|length == 2 %} pillars--2{% endif %} reveal">
       {% for f in d.formats %}
       <article class="pillar">
         <span class="pillar__tag">0{{ loop.index }}</span>
@@ -43,6 +42,18 @@
       <h3>{{ d.program_title }}</h3>
       <div class="body">{{ d.program_body }}</div>
     </div>
+  </div>
+</section>
+
+<!-- GALERÍA de clases -->
+<section class="section section--paper">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">{{ d.gallery_eyebrow }}</span>
+      <h2>{{ d.gallery_title }}</h2>
+    </div>
+    {% set items = d.gallery %}
+    {% include "partials/gallery.html" %}
   </div>
 </section>
 

@@ -5,8 +5,7 @@
 
 {% block content %}
 <!-- HERO -->
-<section class="hero matgrid">
-  <div class="hero__circle" aria-hidden="true"></div>
+<section class="hero hero--photo" style="--hero-img:url('{{ h.hero_image }}')">
   <span class="hero__ru" aria-hidden="true">{{ site.heritage_ru }}</span>
   <div class="wrap hero__inner">
     <span class="eyebrow">{{ h.hero_eyebrow }}</span>
@@ -58,6 +57,18 @@
   </div>
 </section>
 
+<!-- GALERÍA "así entrenamos" -->
+<section class="section section--paper">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">{{ h.gallery_eyebrow }}</span>
+      <h2>{{ h.gallery_title }}</h2>
+    </div>
+    {% set items = h.gallery %}
+    {% include "partials/gallery.html" %}
+  </div>
+</section>
+
 <!-- MANUAL destacado -->
 <section class="section section--paper">
   <div class="wrap">
@@ -95,7 +106,6 @@
         <div class="hours">
           <div class="h-row"><b>Sambo</b><span>{{ schedule.sambo }}</span></div>
           <div class="h-row"><b>Defensa personal</b><span>{{ schedule.defensa }}</span></div>
-          <div class="h-row"><b>Seminarios</b><span>Con reserva previa</span></div>
         </div>
         <p style="color:var(--muted-l);margin-top:22px">{{ contact.address_line1 }} · {{ contact.address_ref }}</p>
         <div class="hero__actions" style="margin-top:20px">
@@ -103,7 +113,7 @@
         </div>
       </div>
       <div class="reveal">
-        <iframe class="map-embed" src="{{ contact.map_embed }}" loading="lazy" title="Mapa: cómo llegar al club" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        {% include "partials/map.html" %}
       </div>
     </div>
   </div>
