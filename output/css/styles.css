@@ -138,7 +138,7 @@ p { text-wrap: pretty; }
 .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
 .brand { display: flex; align-items: center; gap: 12px; font-family: var(--font-display);
   font-size: 1.12rem; line-height: 1.02; letter-spacing: .02em; text-transform: uppercase; color: var(--bone); }
-.brand__mark { flex: 0 0 auto; }
+.brand__mark { flex: 0 0 auto; width: 44px; height: 44px; object-fit: contain; }
 .brand small { display: block; font-family: var(--font-body); font-weight: 700;
   font-size: .55rem; letter-spacing: .14em; color: var(--sambo); line-height: 1; margin-top: 3px;
   white-space: nowrap; }
@@ -370,7 +370,7 @@ p { text-wrap: pretty; }
 .author-card { display: grid; grid-template-columns: auto 1fr; gap: 28px; align-items: center;
   background: var(--ink-2); border: 1px solid var(--line-d); border-radius: 8px; padding: clamp(24px,3vw,40px); }
 .author-card .avatar { width: 96px; height: 96px; border-radius: 50%; background: var(--ink-3);
-  display: grid; place-content: center; font-family: var(--font-display); font-size: 2rem; color: var(--sambo);
+  display: grid; place-content: center; font-family: var(--font-display); font-size: 2rem; color: var(--bone);
   border: 2px solid var(--sambo); }
 .author-card h3 { color: var(--bone); font-size: 1.5rem; }
 .author-card .role { color: var(--sambo); font-weight: 700; font-size: .82rem; letter-spacing: .1em;
@@ -416,12 +416,11 @@ p { text-wrap: pretty; }
 .legal ul { padding-left: 20px; }
 
 /* ---------- logo (imagen) ---------- */
-.brand__mark { width: 44px; height: 44px; object-fit: contain; }
 .site-footer .brand__mark { width: 40px; height: 40px; }
 @media (max-width: 520px) { .brand__mark { width: 38px; height: 38px; } }
 
 /* ---------- hero con fotografía ---------- */
-.hero--photo { background: var(--ink); isolation: isolate; }
+.hero--photo { background: var(--ink); isolation: isolate; border-bottom: 4px solid var(--sambo); }
 .hero--photo::before {
   content: ""; position: absolute; inset: 0; z-index: 0;
   background-image: var(--hero-img);
@@ -437,9 +436,6 @@ p { text-wrap: pretty; }
 .hero--photo .hero__circle { display: none; }
 .hero--photo .hero__ru { z-index: 2; color: rgba(255,255,255,.16); }
 .hero--photo .hero__sub { color: #E7DED2; }
-/* filo rojo inferior, como una lona de tatami */
-.hero--photo::marker { content: none; }
-.hero--photo { border-bottom: 4px solid var(--sambo); }
 
 /* ---------- galería de fotos ---------- */
 .gallery {
@@ -463,7 +459,7 @@ p { text-wrap: pretty; }
 }
 /* pie de foto (para seminarios / créditos) */
 .gallery figcaption {
-  position: absolute; left: 0; right: 0; bottom: 0; z-index: 2;
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; pointer-events: none;
   padding: 26px 16px 12px; font-size: .82rem; font-weight: 600; color: #fff;
   background: linear-gradient(0deg, rgba(16,13,10,.82), transparent);
   opacity: 0; transform: translateY(8px); transition: opacity .3s, transform .3s;
@@ -475,6 +471,21 @@ p { text-wrap: pretty; }
   border-radius: 5px; transition: border-color .3s; pointer-events: none;
 }
 .gallery figure:hover::after { border-color: var(--sambo); }
+/* botón que envuelve cada foto (abre el visor) */
+.gallery__open { position: absolute; inset: 0; width: 100%; height: 100%;
+  margin: 0; padding: 0; border: 0; background: none; cursor: zoom-in; display: block; }
+.gallery__open:focus-visible { outline: 3px solid var(--sambo); outline-offset: -3px; }
+
+/* ---------- visor de imágenes (lightbox) ---------- */
+.lightbox { position: fixed; inset: 0; width: 100%; height: 100%; max-width: 100%; max-height: 100%;
+  margin: 0; border: 0; padding: 24px; background: transparent; overflow: hidden; }
+.lightbox[open] { display: flex; align-items: center; justify-content: center; }
+.lightbox::backdrop { background: rgba(16,13,10,.92); }
+.lightbox__img { max-width: min(1100px, 94vw); max-height: 88vh; width: auto; height: auto;
+  border-radius: 6px; box-shadow: 0 24px 70px rgba(0,0,0,.55); }
+.lightbox__close { position: fixed; top: 16px; right: 20px; width: 46px; height: 46px; border-radius: 50%;
+  border: 0; background: rgba(0,0,0,.55); color: #fff; font-size: 1.7rem; line-height: 1; cursor: pointer; }
+.lightbox__close:hover { background: var(--sambo); }
 
 /* ---------- pie: enlaces legales ---------- */
 .footer-legal { display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: center; }
@@ -520,7 +531,7 @@ body:has(#cookieBanner:not([hidden])) .wa-fab { bottom: 104px; }
   padding: clamp(24px, 3vw, 34px); text-align: center; }
 .instructor .avatar { width: 84px; height: 84px; border-radius: 50%; background: var(--ink-3);
   display: grid; place-content: center; font-family: var(--font-display); font-size: 1.8rem;
-  color: var(--sambo); border: 2px solid var(--sambo); margin: 0 auto 16px; }
+  color: var(--bone); border: 2px solid var(--sambo); margin: 0 auto 16px; }
 .instructor h3 { color: var(--bone); font-size: 1.25rem; line-height: 1.2; }
 .instructor .role { color: var(--sambo); font-weight: 700; font-size: .76rem; letter-spacing: .1em;
   text-transform: uppercase; margin: 6px 0 16px; }
@@ -530,11 +541,16 @@ body:has(#cookieBanner:not([hidden])) .wa-fab { bottom: 104px; }
   background: rgba(216,56,43,.10); border: 1px solid var(--line-d); border-radius: 999px; padding: 5px 12px; }
 
 /* ---------- barra de aviso de temporada (julio/agosto) ---------- */
-.season-bar { background: var(--sambo); color: #fff; }
+.season-bar { display: block; background: var(--sambo); color: #fff; }
 .season-bar[hidden] { display: none; }
-.season-bar .wrap { margin: 0; padding-block: 9px; text-align: center;
+.season-bar .wrap { display: block; padding-block: 9px; text-align: center;
   font-size: .9rem; font-weight: 600; line-height: 1.4; }
 @media (max-width: 560px) { .season-bar .wrap { font-size: .82rem; padding-block: 8px; } }
+
+/* botón con apariencia de enlace (usado dentro de texto) */
+.link-button { background: none; border: 0; padding: 0; font: inherit; color: inherit;
+  text-decoration: underline; cursor: pointer; }
+.link-button:hover { color: var(--sambo); }
 
 /* ---------- contenedor del formulario embebido de MailerLite ---------- */
 .ml-embed-wrap { border-radius: 10px; overflow: hidden; }

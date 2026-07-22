@@ -6,7 +6,7 @@
     <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
     <p>El mapa de Google no se carga hasta que aceptes las cookies.</p>
     <div class="map-consent__actions">
-      <button type="button" class="btn btn--primary" onclick="if(window.AMBCookies){AMBCookies.accept();}">Aceptar y ver el mapa</button>
+      <button type="button" class="btn btn--primary" data-cookie-action="accept">Aceptar y ver el mapa</button>
       <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&query={{ contact.lat }},{{ contact.lng }}" target="_blank" rel="noopener">Abrir en Google Maps</a>
     </div>
   </div>

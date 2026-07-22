@@ -32,10 +32,10 @@ home:
   intro_eyebrow: "Nuestro club"
   intro_title: "Un grupo de gente que entrena en serio, sin humos"
   intro_body: >
-    Somos entusiastas de las artes marciales dedicados al sambo y a la defensa
-    personal. Trabajamos de forma individual, adaptándonos a tu nivel y a tu
-    condición física, para que mejores tus habilidades, tu forma física y tu
-    confianza. Aquí no hay egos: hay técnica, esfuerzo y buen ambiente.
+    Somos entusiastas de las artes marciales dedicados al sambo y a la defensa 
+    personal. Adaptamos cada entrenamiento de forma individual a tu nivel y 
+    condición física para ayudarte a potenciar tus habilidades, tu estado físico 
+    y tu confianza. Sin egos: solo técnica, esfuerzo y buen ambiente.
 
   pillars:
     - tag: "01"
@@ -45,7 +45,7 @@ home:
       link_label: "Conoce el sambo"
     - tag: "02"
       title: "Defensa personal para mujeres"
-      text: "Seminarios de 8 h de formación intensiva. Técnicas sencillas y eficaces, sin necesidad de fuerza física, para cualquier edad y nivel."
+      text: "Seminarios de 4 u 8 h de formación intensiva. Técnicas sencillas y eficaces, sin necesidad de fuerza física, para cualquier edad y nivel."
       link: "/defensa-personal.html"
       link_label: "Ver cursos y seminarios"
     - tag: "03"
@@ -58,7 +58,7 @@ home:
   why_title: "Lo que nos diferencia"
   why_points:
     - title: "Instructor con manual publicado"
-      text: "Jorge Aranda Moro, nuestro instructor, ha publicado un manual de defensa personal para mujeres. No improvisamos: hay método detrás."
+      text: "Jorge Aranda Moro, uno de nuestros instructores, ha publicado un manual de defensa personal para mujeres. No improvisamos: hay método detrás."
     - title: "Sin fuerza, con técnica"
       text: "Nuestro programa está pensado para que funcione sin depender de la fuerza física. Sirve tengas la edad y la forma que tengas."
     - title: "Ambiente cercano"

@@ -64,7 +64,7 @@
         if(chk && !chk.checked){ chk.focus(); return; }
         var subject = encodeURIComponent('Quiero el manual de defensa personal (gratis)');
         var body = encodeURIComponent('Hola, me gustaría recibir el manual en PDF.\n\nNombre: '+n+'\nEmail: '+m+'\n\nGracias.');
-        window.location.href = 'mailto:{{ contact.email }}?subject='+subject+'&body='+body;
+        globalThis.location.href = 'mailto:{{ contact.email }}?subject='+subject+'&body='+body;
       });
     })();
   </script>

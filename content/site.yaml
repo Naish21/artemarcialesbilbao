@@ -50,7 +50,7 @@ legal:
 schedule:
   sambo: "Lunes, miércoles y viernes · 21:15 a 22:30 h"
   defensa: "Solo en seminarios, con reserva previa"
-  seminarios: "Seminarios de 8 h (mínimo), con reserva previa. Al menos dos al año en Bilbao."
+  seminarios: "Seminarios de 4 u 8 h, con reserva previa. Al menos dos al año en Bilbao."
 
 # --- Aviso de temporada -------------------------------------------------------
 # Se muestra automáticamente SOLO en julio y agosto (lo controla el navegador).
@@ -114,13 +114,13 @@ instructors_intro: "Un equipo con años de práctica en distintas artes marciale
 instructors:
   - name: "Jorge Aranda Moro"
     initials: "JA"
-    role: "Defensa personal"
-    disciplines: ["Sambo (CN 2-Dan)", "Kung-fu (CN 1-Dan)", "Defensa personal", "Aikido", "Judo"]
+    role: "Instructor Nacional Nivel 1 Sambo DP"
+    disciplines: ["Sambo (CN 2-Dan)", "Kung-fu (CN 1-Dan)", "Defensa personal", "Aikido", "Judo", "Karate"]
   - name: "Gorka Redondo Quincoces"
     initials: "GR"
-    role: "Instructor"
+    role: "Instructor Nacional Nivel 1 Sambo DP"
     disciplines: ["Sambo (CN 2-Dan)", "Kung-fu (CN 1-Dan)", "Defensa personal", "Aikido", "Judo"]
   - name: "Raúl Muñoz Escalera"
     initials: "RM"
-    role: "Instructor"
-    disciplines: ["Sambo (CN 1-Dan)", "Kung-fu (CN 1-Dan)", "Entrenador HIIT"]
+    role: "Instructor Nacional Nivel 1 Sambo DP"
+    disciplines: ["Sambo (CN 1-Dan)", "Kung-fu (CN 1-Dan)", "Defensa personal", "Judo", "Entrenador HIIT"]

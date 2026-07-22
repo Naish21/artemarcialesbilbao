@@ -49,9 +49,9 @@
   </script>
 </head>
 <body>
-  <div class="season-bar" id="seasonBar" role="status" hidden>
-    <p class="wrap">En agosto cerramos por vacaciones. El nuevo curso comienza el miércoles 2 de septiembre (siempre el primer lunes o miércoles laborable de septiembre).</p>
-  </div>
+  <output class="season-bar" id="seasonBar" hidden>
+    <span class="wrap">En agosto cerramos por vacaciones. El nuevo curso comienza el miércoles 2 de septiembre (siempre el primer lunes o miércoles laborable de septiembre).</span>
+  </output>
   <header class="site-header">
     <nav class="wrap nav" aria-label="Principal">
       <a class="brand" href="/">
@@ -128,19 +128,29 @@
     </div>
 <div class="gallery reveal">
   <figure class="span-2">
-    <img src="/img/dpf-5.jpg" alt="Grupo de un seminario de defensa personal para mujeres" loading="lazy" decoding="async">
+    <button type="button" class="gallery__open" data-full="/img/dpf-5.jpg" aria-label="Ampliar imagen: Grupo de un seminario de defensa personal para mujeres">
+      <img src="/img/dpf-5.jpg" alt="Grupo de un seminario de defensa personal para mujeres" loading="lazy" decoding="async">
+    </button>
   </figure>
   <figure>
-    <img src="/img/dpf-1.jpg" alt="Prácticas de golpeo con manoplas en clase de defensa personal" loading="lazy" decoding="async">
+    <button type="button" class="gallery__open" data-full="/img/dpf-1.jpg" aria-label="Ampliar imagen: Prácticas de golpeo con manoplas en clase de defensa personal">
+      <img src="/img/dpf-1.jpg" alt="Prácticas de golpeo con manoplas en clase de defensa personal" loading="lazy" decoding="async">
+    </button>
   </figure>
   <figure>
-    <img src="/img/dpf-2.jpg" alt="Ejercicio por parejas en clase de defensa personal femenina" loading="lazy" decoding="async">
+    <button type="button" class="gallery__open" data-full="/img/dpf-2.jpg" aria-label="Ampliar imagen: Ejercicio por parejas en clase de defensa personal femenina">
+      <img src="/img/dpf-2.jpg" alt="Ejercicio por parejas en clase de defensa personal femenina" loading="lazy" decoding="async">
+    </button>
   </figure>
   <figure>
-    <img src="/img/dpf-3.jpg" alt="Alumnas practicando defensa personal en el tatami" loading="lazy" decoding="async">
+    <button type="button" class="gallery__open" data-full="/img/dpf-3.jpg" aria-label="Ampliar imagen: Alumnas practicando defensa personal en el tatami">
+      <img src="/img/dpf-3.jpg" alt="Alumnas practicando defensa personal en el tatami" loading="lazy" decoding="async">
+    </button>
   </figure>
   <figure>
-    <img src="/img/dpf-4.jpg" alt="Instructor guiando una práctica de defensa personal" loading="lazy" decoding="async">
+    <button type="button" class="gallery__open" data-full="/img/dpf-4.jpg" aria-label="Ampliar imagen: Instructor guiando una práctica de defensa personal">
+      <img src="/img/dpf-4.jpg" alt="Instructor guiando una práctica de defensa personal" loading="lazy" decoding="async">
+    </button>
   </figure>
 </div>  </div>
 </section>
@@ -152,7 +162,7 @@
       <div class="manual-cover reveal">
         <span class="manual-badge">Gratis en PDF</span>
         <img src="https://www.coollibri.es/Project4/d14f1195-79c7-45b2-b3ad-7c24b3b6a4a1/56474/couverture_12072026193551.png" alt="Portada del Manual de Defensa Personal para Mujeres"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='grid';">
+             data-fallback>
         <div class="manual-cover__ph" style="display:none">Manual de Defensa Personal para Mujeres<br><small>Portada</small></div>
       </div>
       <div class="reveal">
@@ -222,7 +232,7 @@
           <a href="/privacidad.html">Privacidad</a>
           <a href="/terminos.html">Términos del servicio</a>
           <a href="/cookies.html">Cookies</a>
-          <button type="button" class="footer-legal__btn" onclick="if(window.AMBCookies){AMBCookies.open();}">Configurar cookies</button>
+          <button type="button" class="footer-legal__btn" data-cookie-action="open">Configurar cookies</button>
         </nav>
       </div>
     </div>
@@ -244,6 +254,12 @@
   <a class="wa-fab" href="https://wa.me/34656764922" aria-label="Escríbenos por WhatsApp" target="_blank" rel="noopener">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.6.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.1c-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.3.3-1 .9-1 2.3s1 2.7 1.1 2.9c.2.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
   </a>
+
+  <!-- Visor de imágenes (galerías) -->
+  <dialog id="lightbox" class="lightbox" aria-label="Imagen ampliada">
+    <button type="button" class="lightbox__close" data-lightbox-close aria-label="Cerrar">&times;</button>
+    <img class="lightbox__img" alt="">
+  </dialog>
 
   <script src="/js/main.js" defer></script>
 </body>

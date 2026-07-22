@@ -76,7 +76,7 @@
       <div class="manual-cover reveal">
         <span class="manual-badge">Gratis en PDF</span>
         <img src="{{ manual.cover_url }}" alt="Portada del {{ manual.title }}"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='grid';">
+             data-fallback>
         <div class="manual-cover__ph" style="display:none">{{ manual.title }}<br><small>Portada</small></div>
       </div>
       <div class="reveal">

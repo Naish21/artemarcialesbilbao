@@ -57,9 +57,9 @@
 </script>
 </head>
 <body>
-  <div class="season-bar" id="seasonBar" role="status" hidden>
-    <p class="wrap">En agosto cerramos por vacaciones. El nuevo curso comienza el miércoles 2 de septiembre (siempre el primer lunes o miércoles laborable de septiembre).</p>
-  </div>
+  <output class="season-bar" id="seasonBar" hidden>
+    <span class="wrap">En agosto cerramos por vacaciones. El nuevo curso comienza el miércoles 2 de septiembre (siempre el primer lunes o miércoles laborable de septiembre).</span>
+  </output>
   <header class="site-header">
     <nav class="wrap nav" aria-label="Principal">
       <a class="brand" href="/">
@@ -88,7 +88,7 @@
       <div class="manual-cover reveal">
         <span class="manual-badge">Gratis en PDF</span>
         <img src="https://www.coollibri.es/Project4/d14f1195-79c7-45b2-b3ad-7c24b3b6a4a1/56474/couverture_12072026193551.png" alt="Portada del Manual de Defensa Personal para Mujeres"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='grid';">
+             data-fallback>
         <div class="manual-cover__ph" style="display:none">Manual de Defensa Personal para Mujeres<br><small>Portada</small></div>
         <div class="manual-meta">
           <span><b>58</b> páginas</span>
@@ -104,7 +104,7 @@
 </p>
         <p style="color:var(--muted-d);margin-top:14px">Escrito por <b style="color:var(--bone)">Jorge Aranda Moro</b>, instructor del club. Déjanos tu email y te lo enviamos gratis en PDF.</p>
 
-        <div style="margin-top:26px">
+        <div id="lead" style="margin-top:26px">
 
     <div class="ml-embed-wrap">
       <div class="ml-embedded" data-form="PttuCZ"></div>
@@ -142,7 +142,7 @@
         <h3>PDF gratis</h3>
         <div class="price">0 €</div>
         <p>Te lo enviamos al correo por dejarnos tu email. Ideal para empezar hoy mismo.</p>
-        <a class="btn btn--primary" href="#top" onclick="document.querySelector('.lead-form input').focus();return false;">Pedir el PDF <span class="btn__arrow">→</span></a>
+        <a class="btn btn--primary" href="#lead">Pedir el PDF <span class="btn__arrow">→</span></a>
       </div>
       <div class="offer offer--buy">
         <span class="offer__label">◆ En papel</span>
@@ -211,7 +211,7 @@
           <a href="/privacidad.html">Privacidad</a>
           <a href="/terminos.html">Términos del servicio</a>
           <a href="/cookies.html">Cookies</a>
-          <button type="button" class="footer-legal__btn" onclick="if(window.AMBCookies){AMBCookies.open();}">Configurar cookies</button>
+          <button type="button" class="footer-legal__btn" data-cookie-action="open">Configurar cookies</button>
         </nav>
       </div>
     </div>
@@ -234,14 +234,27 @@
     <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.6.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.1c-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.3.3-1 .9-1 2.3s1 2.7 1.1 2.9c.2.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
   </a>
 
+  <!-- Visor de imágenes (galerías) -->
+  <dialog id="lightbox" class="lightbox" aria-label="Imagen ampliada">
+    <button type="button" class="lightbox__close" data-lightbox-close aria-label="Cerrar">&times;</button>
+    <img class="lightbox__img" alt="">
+  </dialog>
+
   <script src="/js/main.js" defer></script>
 <!-- MailerLite Universal (solo en esta página, que es donde está el formulario) -->
 <script>
-  (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-  .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-  n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-  (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-  ml('account', '2521369');
+  (function () {
+    globalThis.ml = globalThis.ml || function () {
+      globalThis.ml.q = globalThis.ml.q || [];
+      globalThis.ml.q.push(arguments);
+    };
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://assets.mailerlite.com/js/universal.js';
+    var first = document.getElementsByTagName('script')[0];
+    first.parentNode.insertBefore(script, first);
+    globalThis.ml('account', '2521369');
+  })();
 </script>
 </body>
 </html>
