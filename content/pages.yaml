@@ -4,9 +4,9 @@
 # =============================================================================
 
 home:
-  hero_eyebrow: "Sambo · Defensa personal · Bilbao"
-  hero_title_1: "Aprende a"
-  hero_title_2: "defenderte"
+  hero_eyebrow: "Aprende a defenderte"
+  hero_title_1: "Sambo y defensa"
+  hero_title_2: "personal en Bilbao"
   hero_subtitle: >
     Club de sambo y defensa personal en el centro de Bilbao. Entrenamos fuerte,
     en un ambiente cercano, y damos herramientas reales para que confíes en ti.
@@ -14,6 +14,23 @@ home:
   hero_cta_secondary: "Descarga el manual gratis"
   # Imagen de cabecera (se muestra oscurecida detrás del texto)
   hero_image: "/img/hero-home.jpg"
+
+  # Preguntas frecuentes (se muestran en la home y generan datos estructurados FAQ para Google)
+  faq_eyebrow: "Preguntas frecuentes"
+  faq_title: "Lo que más nos preguntáis"
+  faq:
+    - q: "¿Hace falta experiencia previa o buena forma física?"
+      a: "No. Las clases de sambo y los seminarios de defensa personal están pensados para cualquier persona, sin conocimientos previos y adaptándonos a tu nivel."
+    - q: "¿El sambo sirve para defenderse en la calle?"
+      a: "Sí. Sambo significa literalmente «autodefensa sin armas»: combina lucha, proyecciones, controles y golpeo, y es un sistema muy completo de defensa personal."
+    - q: "¿Dónde y cuándo entrenáis?"
+      a: "En la galería comercial de Plaza Indautxu, en el centro de Bilbao, junto a la entrada del metro. Entrenamos lunes, miércoles y viernes de 21:15 a 22:30."
+    - q: "¿La primera clase es gratis?"
+      a: "Sí. Puedes venir a una clase de prueba gratuita y sin compromiso para conocernos y ver si te encaja."
+    - q: "¿Cómo son los cursos de defensa personal para mujeres?"
+      a: "Se imparten en seminarios intensivos con reserva previa. Trabajamos técnicas sencillas y eficaces, sin necesidad de fuerza física, con un enfoque de prevención y gestión del conflicto."
+    - q: "¿Cómo consigo el manual de defensa personal para mujeres?"
+      a: "Puedes descargarlo gratis en PDF dejándonos tu email en la web, o comprarlo en papel por 8 €."
 
   # Galería "así entrenamos" (puedes añadir o quitar fotos libremente)
   gallery_eyebrow: "El club por dentro"

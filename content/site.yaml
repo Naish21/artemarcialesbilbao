@@ -26,9 +26,11 @@ contact:
   city: "Bilbao"
   province: "Bizkaia"
   postal_code: "48010"
-  lat: 43.260905
-  lng: -2.940621
-  map_embed: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2905.547476341742!2d-2.940621!3d43.260905!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x321e54ad3a20ddb7!2sJudo%20Club%20Ohisama!5e0!3m2!1sen!2ses!4v1582395721070!5m2!1sen!2ses"
+  lat: 43.2606454
+  lng: -2.9406037
+  # Mapa embebido (muestra tu ficha real de Google) y enlace directo a tu listado
+  map_embed: "https://maps.google.com/maps?q=SAMBO+D.P.+BILBAO+Bilbao&z=16&output=embed"
+  maps_url: "https://www.google.com/maps?cid=15807300933190098170"
 
 social:
   instagram_user: "sambodpbilbao"
@@ -73,7 +75,7 @@ lead_magnet:
   #    <div class="ml-embedded" data-form="xxxxxx">  -> aquí pondrías  "xxxxxx"
   mailerlite_form: "PttuCZ"
   # --- Formspree (alternativa) ---
-  # formspree_id: "TU_ID_FORMSPREE"
+  formspree_id: "TU_ID_FORMSPREE"
   success_url: "/gracias.html"
 
 manual:

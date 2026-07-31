@@ -201,7 +201,7 @@ p { text-wrap: pretty; }
 .hero__ru {
   position: absolute; z-index: 1; right: clamp(-10px, 2vw, 40px); bottom: clamp(20px, 5vw, 60px);
   font-family: var(--font-display); text-transform: none;
-  font-size: clamp(1rem, 3.4vw, 2rem); color: rgba(255,255,255,.08); letter-spacing: .05em;
+  font-size: clamp(1rem, 3.4vw, 2rem); color: #fff; opacity: .08; letter-spacing: .05em;
   writing-mode: vertical-rl; pointer-events: none; user-select: none;
 }
 @keyframes floaty { 0%,100% { translate: 0 -50%; } 50% { translate: 0 -54%; } }
@@ -400,7 +400,7 @@ p { text-wrap: pretty; }
 
 /* ---------- floating whatsapp ---------- */
 .wa-fab { position: fixed; right: 20px; bottom: 20px; z-index: 60;
-  width: 56px; height: 56px; border-radius: 50%; background: #25D366; color: #fff;
+  width: 56px; height: 56px; border-radius: 50%; background: #25D366; color: #16130F;
   display: grid; place-content: center; box-shadow: 0 10px 30px -8px rgba(0,0,0,.5);
   transition: transform .2s var(--ease); }
 .wa-fab:hover { transform: scale(1.08); }
@@ -434,7 +434,7 @@ p { text-wrap: pretty; }
 }
 .hero--photo .hero__inner { z-index: 3; }
 .hero--photo .hero__circle { display: none; }
-.hero--photo .hero__ru { z-index: 2; color: rgba(255,255,255,.16); }
+.hero--photo .hero__ru { z-index: 2; opacity: .16; }
 .hero--photo .hero__sub { color: #E7DED2; }
 
 /* ---------- galería de fotos ---------- */
@@ -556,6 +556,26 @@ body:has(#cookieBanner:not([hidden])) .wa-fab { bottom: 104px; }
 .ml-embed-wrap { border-radius: 10px; overflow: hidden; }
 .ml-embed-wrap .ml-embedded { width: 100%; }
 /* el estilo fino del formulario se ajusta dentro del editor de MailerLite */
+
+/* ---------- FAQ (acordeón) ---------- */
+.faq { max-width: 760px; margin-inline: auto; }
+.faq__item { border-bottom: 1px solid var(--line-d); }
+.faq__item summary { cursor: pointer; list-style: none; position: relative;
+  padding: 20px 44px 20px 0; font-family: var(--font-body); font-weight: 700;
+  font-size: 1.05rem; color: var(--bone); }
+.faq__item summary::-webkit-details-marker { display: none; }
+.faq__item summary::after { content: "+"; position: absolute; right: 6px; top: 50%;
+  transform: translateY(-50%); font-size: 1.6rem; line-height: 1; color: var(--sambo); }
+.faq__item[open] summary::after { content: "\2212"; }
+.faq__item summary:hover { color: var(--sambo); }
+.faq__a { padding: 0 44px 22px 0; color: var(--muted-d); }
+.faq__a p { margin: 0; line-height: 1.65; max-width: 66ch; }
+
+/* ---------- enlaces del 404 ---------- */
+.notfound-links { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 34px;
+  padding-top: 22px; border-top: 1px solid var(--line-d); }
+.notfound-links a { color: var(--muted-d); font-weight: 600; font-size: .92rem; }
+.notfound-links a:hover { color: var(--sambo); }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }

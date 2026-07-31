@@ -3,6 +3,20 @@
 {% block title %}Artes Marciales Bilbao · Sambo y Defensa Personal{% endblock %}
 {% block description %}{{ site.description }}{% endblock %}
 
+{% block head_extra %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+{% for item in h.faq %}
+    { "@type": "Question", "name": {{ item.q | tojson | safe }}, "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | tojson | safe }} } }{% if not loop.last %},{% endif %}
+{% endfor %}
+  ]
+}
+</script>
+{% endblock %}
+
 {% block content %}
 <!-- HERO -->
 <section class="hero hero--photo" style="--hero-img:url('{{ h.hero_image }}')">
@@ -115,6 +129,24 @@
       <div class="reveal">
         {% include "partials/map.html" %}
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section matgrid">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">{{ h.faq_eyebrow }}</span>
+      <h2>{{ h.faq_title }}</h2>
+    </div>
+    <div class="faq reveal">
+      {% for item in h.faq %}
+      <details class="faq__item">
+        <summary>{{ item.q }}</summary>
+        <div class="faq__a"><p>{{ item.a }}</p></div>
+      </details>
+      {% endfor %}
     </div>
   </div>
 </section>

@@ -9,6 +9,7 @@ Lee el contenido de content/*.yaml y las plantillas de templates/,
 y genera el sitio estático listo para subir a IONOS en la carpeta output/.
 """
 import shutil
+import json
 from pathlib import Path
 from datetime import date
 
@@ -37,6 +38,7 @@ PAGES = {
     "manual.html":           ("manual.html",           "manual"),
     "contacto.html":         ("contacto.html",         "contacto"),
     "gracias.html":          ("gracias.html",          None),
+    "404.html":              ("404.html",              None),
     "aviso-legal.html":      ("aviso-legal.html",      None),
     "privacidad.html":       ("privacidad.html",       None),
     "terminos.html":         ("terminos.html",         None),
@@ -48,6 +50,11 @@ env = Environment(
     autoescape=select_autoescape(["html"]),
     trim_blocks=True, lstrip_blocks=True,
 )
+# Filtro para serializar cadenas de forma segura en JSON-LD (comillas, acentos, < > &)
+def _to_json(value):
+    s = json.dumps(value, ensure_ascii=False)
+    return s.replace("<", "\\u003c").replace(">", "\\u003e").replace("&", "\\u0026")
+env.filters["tojson"] = _to_json
 
 def build():
     # Limpiar y recrear output/
@@ -108,8 +115,8 @@ Redirect 301 /index.php/defensa-personal-femenina /defensa-personal.html
 Redirect 301 /index.php/contacto /contacto.html
 Redirect 301 /index.php /
 
-# Página 404 (opcional: crea 404.html)
-# ErrorDocument 404 /404.html
+# Página de error 404 personalizada
+ErrorDocument 404 /404.html
 
 # Cache de estáticos
 <IfModule mod_expires.c>

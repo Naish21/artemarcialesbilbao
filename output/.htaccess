@@ -17,8 +17,8 @@ Redirect 301 /index.php/defensa-personal-femenina /defensa-personal.html
 Redirect 301 /index.php/contacto /contacto.html
 Redirect 301 /index.php /
 
-# Página 404 (opcional: crea 404.html)
-# ErrorDocument 404 /404.html
+# Página de error 404 personalizada
+ErrorDocument 404 /404.html
 
 # Cache de estáticos
 <IfModule mod_expires.c>

@@ -7,7 +7,7 @@
     <p>El mapa de Google no se carga hasta que aceptes las cookies.</p>
     <div class="map-consent__actions">
       <button type="button" class="btn btn--primary" data-cookie-action="accept">Aceptar y ver el mapa</button>
-      <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&query={{ contact.lat }},{{ contact.lng }}" target="_blank" rel="noopener">Abrir en Google Maps</a>
+      <a class="btn btn--ghost" href="{{ contact.maps_url }}" target="_blank" rel="noopener">Abrir en Google Maps</a>
     </div>
   </div>
 </div>
